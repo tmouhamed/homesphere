@@ -1,0 +1,22 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.App {
+    @include flex-display-column;
+}
+.main {
+    @include flex-display-column;
+}
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    color: $black-text-color;
+    @include pargraph-mobile-style;
+
+    @include tablet-size {
+      @include pargraph-tablet-style;
+    }
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
