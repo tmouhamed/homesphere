@@ -1,18 +1,18 @@
-@import '../variables.scss';
+@import './variables.scss';
 
-//Font Typography
-@font-face {
-  font-family: Avenir Next-regular;
-  src: url("../../assets/global-font/avenirNextProLT/Linotype-AvenirNextLTPro-Regular.otf");
-}
-@font-face {
-  font-family: Avenir Next-bold;
-  src: url("../../assets/global-font/avenirNextProLT/Linotype-AvenirNextLTPro-Bold.otf");
-}
-@font-face {
-  font-family: Avenir Next-bolder;
-  src: url("../../assets/global-font/avenirNextProLT/Linotype-AvenirNextLTPro-Demi.otf");
-}
+// //Font Typography
+// @font-face {
+//   font-family: Avenir Next-regular;
+//   src: url("../../assets/global-font/avenirNextProLT/Linotype-AvenirNextLTPro-Regular.otf");
+// }
+// @font-face {
+//   font-family: Avenir Next-bold;
+//   src: url("../../assets/global-font/avenirNextProLT/Linotype-AvenirNextLTPro-Bold.otf");
+// }
+// @font-face {
+//   font-family: Avenir Next-bolder;
+//   src: url("../../assets/global-font/avenirNextProLT/Linotype-AvenirNextLTPro-Demi.otf");
+// }
 
 //Screen Sizes
 @mixin tablet-size {
@@ -48,67 +48,67 @@
   height: auto;
 }
 
-@mixin button-style {
-  @include subheader-mobile-style;
-  width: 100%;
-  background-color: $button-color;
-  color: $white-text-color;
-  border: none;
-  border-radius: 5px;
-  padding: 15px 0;
-  text-transform: uppercase;
-}
+// @mixin button-style {
+//   @include subheader-mobile-style;
+//   width: 100%;
+//   background-color: $button-color;
+//   color: $white-text-color;
+//   border: none;
+//   border-radius: 5px;
+//   padding: 15px 0;
+//   text-transform: uppercase;
+// }
 
-// Typography MOBILE Styles
-@mixin header-mobile-style {
-  margin: 0;
-  font-size: 24px;
-  line-height: 32px;
-  font-family: $bold-font;
-}
-@mixin subheader-mobile-style {
-  margin: 0;
-  font-size: 14px;
-  line-height: 22px;
-  font-family: $demibold-font;
-}
-@mixin listTitle-mobile-style {
-  margin: 0;
-  font-size: 13px;
-  line-height: 18px;
-  font-family: $demibold-font;
-}
-@mixin pargraph-mobile-style {
-  margin: 0;
-  font-size: 13px;
-  line-height: 22px;
-  font-family: $regular-font;
-}
+// // Typography MOBILE Styles
+// @mixin header-mobile-style {
+//   margin: 0;
+//   font-size: 24px;
+//   line-height: 32px;
+//   font-family: $bold-font;
+// }
+// @mixin subheader-mobile-style {
+//   margin: 0;
+//   font-size: 14px;
+//   line-height: 22px;
+//   font-family: $demibold-font;
+// }
+// @mixin listTitle-mobile-style {
+//   margin: 0;
+//   font-size: 13px;
+//   line-height: 18px;
+//   font-family: $demibold-font;
+// }
+// @mixin pargraph-mobile-style {
+//   margin: 0;
+//   font-size: 13px;
+//   line-height: 22px;
+//   font-family: $regular-font;
+// }
 
-// Typography TABLET Styles
-@mixin header-tablet-style {
-  font-size: 36px;
-  line-height: 44px;
-  font-family: $bold-font;
-}
-@mixin header2-tablet-style {
-  font-size: 24px;
-  line-height: 32px;
-  font-family: $bold-font;
-}
-@mixin subheader-tablet-style {
-  font-size: 16px;
-  line-height: 24px;
-  font-family: $demibold-font;
-}
-@mixin listTitle-tablet-style {
-  margin: 0;
-  font-size: 14px;
-  line-height: 20px;
-  font-family: $demibold-font;
-}
-@mixin pargraph-tablet-style {
-  font-size: 14px;
-  line-height: 22px;
-  font-family: $regular-font;
-}
+// // Typography TABLET Styles
+// @mixin header-tablet-style {
+//   font-size: 36px;
+//   line-height: 44px;
+//   font-family: $bold-font;
+// }
+// @mixin header2-tablet-style {
+//   font-size: 24px;
+//   line-height: 32px;
+//   font-family: $bold-font;
+// }
+// @mixin subheader-tablet-style {
+//   font-size: 16px;
+//   line-height: 24px;
+//   font-family: $demibold-font;
+// }
+// @mixin listTitle-tablet-style {
+//   margin: 0;
+//   font-size: 14px;
+//   line-height: 20px;
+//   font-family: $demibold-font;
+// }
+// @mixin pargraph-tablet-style {
+//   font-size: 14px;
+//   line-height: 22px;
+//   font-family: $regular-font;
+// }

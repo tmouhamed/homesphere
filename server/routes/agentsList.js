@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-
-const agentsData = require('../data/agentsData');
+require('../data/generator/agentsGenerator');
+const agentsData = require('../data/agentsData.json')
 
 router.get('/', (request, response) => {
 
-    response.send(agentsData);
+    response.json(agentsData);
 
 })
 

@@ -10,12 +10,12 @@
 html, body {
     box-sizing: border-box;
     margin: 0;
-    color: $black-text-color;
-    @include pargraph-mobile-style;
+    // color: $black-text-color;
+    // @include pargraph-mobile-style;
 
-    @include tablet-size {
-      @include pargraph-tablet-style;
-    }
+    // @include tablet-size {
+    //   @include pargraph-tablet-style;
+    // }
 }
   *, *:before, *:after {
     box-sizing: inherit;

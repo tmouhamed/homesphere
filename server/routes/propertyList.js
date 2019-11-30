@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
-const propertiesData = require('../data/propertiesData');
+require('../data/generator/propertyGenerator');
+const propertiesData = require('../data/propertiesData.json')
 
 router.get('/', (request, response) => {
 

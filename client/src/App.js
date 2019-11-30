@@ -1,7 +1,15 @@
 import React from 'react';
+import Homepage from './pages/Homepage/Homepage';
 
-function App() {
-  return (null);
+class App extends React.Component {
+  api = "https://api.simplyrets.com/properties";
+  render(){
+    return(
+      <>
+      <Homepage />
+      </>
+    );
+  }
 }
 
 export default App;
