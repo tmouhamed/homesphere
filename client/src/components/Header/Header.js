@@ -1,7 +1,6 @@
 import React from 'react';
 import './Header.scss';
 import Logo from '../../assets/logo/logo.png';
-import Divider from '../../assets/images/divider.svg'
 
 class Header extends React.Component {
     showSettings(event) {

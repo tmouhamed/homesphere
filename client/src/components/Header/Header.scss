@@ -9,11 +9,10 @@
     position: absolute;
     width: 100%;
     padding: 15px 24px;
-    text-shadow: 0px 0px 2px #131415;
   }
 
   @include desktop-size {
-    padding: $desktop-margin;
+    padding: 20px 180px;
   }
 
   &-logo {
@@ -39,8 +38,6 @@
       margin: 0;
 
       &-item {
-        width: 50%;
-
         @include tablet-size {
           width: auto;
           padding: 0 24px;
@@ -48,12 +45,15 @@
         }
         @include desktop-size {
           margin: 0;
-          margin-left: 56px;
         }
-
-        & img {
-          width: 20px;
-          height: 39px;
+        &:hover{
+          border-top: 3px solid white;
+          padding-top: 5px;
+        }
+        &:last-child {
+          &:hover {
+            border: none;
+          }
         }
       }
 

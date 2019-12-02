@@ -1,0 +1,9 @@
+@import "../../styles/base.scss";
+
+.main__form {
+  @include flex-display-column;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 24%;
+}

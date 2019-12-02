@@ -3,6 +3,7 @@ import './Hero.scss';
 import Particles from 'react-particles-js';
 import Header from '../Header/Header';
 import MediaQuery from 'react-responsive';
+import Form from '../Form/Form';
 
 class Hero extends React.Component {
     render() {
@@ -34,6 +35,7 @@ class Hero extends React.Component {
                 <div id="particles-js"></div>
                 </MediaQuery>
                 <Header />
+                <Form />
             </>
         );
     }
