@@ -20,9 +20,10 @@
     padding: 16px;
     @include tablet-size {
       padding: 0;
+      width: 18%;
     }
     & img {
-      width: 60%;
+      width: 50%;
     }
   }
 
@@ -32,6 +33,7 @@
     &__list {
       @include flex-display-row;
       justify-content: flex-end;
+      align-items: center;
       list-style: none;
       padding: 0;
       margin: 0;
@@ -41,17 +43,33 @@
 
         @include tablet-size {
           width: auto;
-          margin: 0 5px;
+          padding: 0 24px;
+          @include menu-tablet-style;
         }
         @include desktop-size {
           margin: 0;
           margin-left: 56px;
+        }
+
+        & img {
+          width: 20px;
+          height: 39px;
         }
       }
 
       &-link {
         text-decoration: none;
         color: $white-text-color;
+      }
+
+      &-button {
+        border: 1px solid white;
+        background: transparent;
+        border-radius: 3px;
+        padding: 8px 24px;
+        color: white;
+        @include menu-tablet-style;
+        line-height: 18px;
       }
     }
   }
