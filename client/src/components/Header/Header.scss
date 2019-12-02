@@ -1,39 +1,47 @@
 @import "../../styles/base.scss";
 
-.header {
-  padding: $mobile-margin;
-  @include flex-display-row;
-  justify-content: space-between;
-  @include tablet-size {
-    padding: $tablet-margin;
+.main__header {
+  display: none;
+  @include tablet-size {    
+    @include flex-display-row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    padding: 15px 24px;
+    text-shadow: 0px 0px 2px #131415;
   }
+
   @include desktop-size {
     padding: $desktop-margin;
   }
 
-  &__logo {
+  &-logo {
     padding: 16px;
     @include tablet-size {
       padding: 0;
     }
+    & img {
+      width: 60%;
+    }
   }
-  
-  &__nav {
+
+  &-nav {
     width: 100%;
 
-    &-list {
+    &__list {
       @include flex-display-row;
+      justify-content: flex-end;
       list-style: none;
       padding: 0;
       margin: 0;
 
-      &__item {
+      &-item {
         width: 50%;
 
         @include tablet-size {
-          width: 100%;
-          margin: 0 30px;
-          padding: 30px 5px;
+          width: auto;
+          margin: 0 5px;
         }
         @include desktop-size {
           margin: 0;
@@ -41,7 +49,7 @@
         }
       }
 
-      &__link {
+      &-link {
         text-decoration: none;
         color: $white-text-color;
       }

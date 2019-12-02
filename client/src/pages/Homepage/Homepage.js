@@ -1,11 +1,15 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
+import Burgermenu from '../../components/Burgermenu/Burgermenu';
+import Hero from '../../components/Hero/Hero';
 
 class Homepage extends React.Component {
     render() {
-        return(
+        return (
             <>
-            <Header />
+                <Hero></Hero>
+                <Burgermenu />
+                <main>
+                </main>
             </>
         );
     }

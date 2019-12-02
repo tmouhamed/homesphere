@@ -1,0 +1,8 @@
+@import "../../styles/base.scss";
+.main__hero {
+    display: block;
+    background-image: linear-gradient(150deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

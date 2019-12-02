@@ -3,10 +3,10 @@ import Homepage from './pages/Homepage/Homepage';
 
 class App extends React.Component {
   api = "https://api.simplyrets.com/properties";
-  render(){
-    return(
+  render() {
+    return (
       <>
-      <Homepage />
+        <Homepage />
       </>
     );
   }
