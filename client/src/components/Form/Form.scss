@@ -1,9 +1,38 @@
 @import "../../styles/base.scss";
 
 .main__form {
-  @include flex-display-column;
-  align-items: center;
   position: absolute;
-  width: 100%;
-  top: 24%;
+  width: 28%;
+  top: 20%;
+  left: 10%;
+  background-color: #DCEBFB;
+  color: #3C3956;
+  text-align: center;
+  border-radius: 3px;
+  padding: 30px 30px;
+
+  &-fieldset {
+    @include flex-display-column;
+    align-items: center;
+    padding: 0;
+    border: none;
+
+    &__title {
+        @include header-tablet-style;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+  }
+}
+
+//custom styling for the tabs in the form
+.react-tabs__tab-list {
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 1px solid #DCEBFB;
+}
+.react-tabs__tab--selected {
+    background: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid #3C3956;
 }

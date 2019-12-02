@@ -10,15 +10,15 @@ class Hero extends React.Component {
         return (
             <>
             <MediaQuery minDeviceWidth={768}>
-                <section className="main__hero">
+                {/* <section className="main__hero">
                     <Particles className="particle-js"
                         params={{
                             "particles": {
                                 "number": {
-                                    "value": 100
+                                    "value": 140
                                 },
                                 "size": {
-                                    "value": 2
+                                    "value": 4
                                 }
                             },
                             "interactivity": {
@@ -31,7 +31,7 @@ class Hero extends React.Component {
                             }
                         }} />
 
-                </section>
+                </section> */}
                 <div id="particles-js"></div>
                 </MediaQuery>
                 <Header />

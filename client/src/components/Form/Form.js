@@ -1,11 +1,13 @@
 import React from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import "react-tabs/style/react-tabs.css";
 import './Form.scss';
 
 class Form extends React.Component {
   iceCreamFlavors = ['chocolate', 'vanilla', 'peanut butter', 'mint'];
   state = {
     nameValue: '',
-    icValue: this.iceCreamFlavors && [this.iceCreamFlavors[0], this.iceCreamFlavors[1]] 
+    icValue: this.iceCreamFlavors && [this.iceCreamFlavors[0], this.iceCreamFlavors[1]]
   }
 
   constructor() {
@@ -16,7 +18,7 @@ class Form extends React.Component {
   }
 
   handleNameChange(e) {
-    this.setState({ 
+    this.setState({
       nameValue: e.target.value.toUpperCase()
     });
   }
@@ -42,31 +44,62 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form className="bstn-flex bstn-flex-col main__form" onSubmit={this.handleSubmit}>
-        <fieldset className="bstn-my-4 bstn-p-8 bstn-flex bstn-flex-col bstn-border-4 bstn-border-solid bstn-border-grey-300">
-          <label className="bstn-mb-4 bstn-type-body-large">
-            Name:
-          </label>
-          <input
-            className="bstn-input-text"
-            name="name"
-            type="text"
-            value={this.state.nameValue}
-            onChange={this.handleNameChange} />
-        </fieldset>
-        <fieldset className="bstn-my-4 bstn-p-8 bstn-flex bstn-flex-col bstn-border-4 bstn-border-solid bstn-border-grey-300">
-          <label className="bstn-mb-4 bstn-type-body-large">
-            Select a flavor you like:
-          </label>
-          <select
-            // value={this.state.icValue}
-            name="icecream"
-            onChange={this.handleIceCreamChange}
-            multiple={true}>
-            {
-              this.iceCreamFlavors.map(f => <option key={f} value={f}>{f}</option>)
-            }
-          </select>
+      <form className="main__form" onSubmit={this.handleSubmit}>
+        <fieldset className="main__form-fieldset">
+          <h1 className="main__form-fieldset__title">Toronto Real Estate</h1>
+          {/* Neighborhood Searchbar */}
+          <Tabs>
+            <TabList>
+              <Tab>Rent</Tab>
+              <Tab>Sell</Tab>
+            </TabList>
+
+            {/* FOR RENT */}
+            <TabPanel>
+              <div>
+                <h2>Apartments for rent in Toronto</h2>
+                <p>Toronto apartments, condos, penthouses, brownstones and houses for rent.</p>
+              </div>
+              <div className="main__form-fieldset__neighbourhood-searchbar">
+                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+              </div>
+
+              <div className="main__form-fieldset__price-selector">
+                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+              </div>
+              <div className="main__form-fieldset__beds-selector">
+                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+              </div>
+              <div className="main__form-fieldset__submit">
+                <button className="main__form-fieldset__submit-button">Submit</button>
+              </div>
+            </TabPanel>
+
+            {/* FOR SELL */}
+            <TabPanel>
+            <div>
+                <h2>Apartments for sell in Toronto</h2>
+                <p>Toronto apartments, condos, penthouses, brownstones and houses for rent.</p>
+              </div>
+
+              <div className="main__form-fieldset__neighbourhood-searchbar">
+                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+              </div>
+
+              <div className="main__form-fieldset__price-selector">
+                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+              </div>
+              <div className="main__form-fieldset__beds-selector">
+                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+              </div>
+              <div className="main__form-fieldset__submit">
+                <button className="main__form-fieldset__submit-button">Submit</button>
+              </div>
+            </TabPanel>
+
+          </Tabs>
         </fieldset>
       </form>
     )
