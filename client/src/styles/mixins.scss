@@ -1,17 +1,17 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 //Font Typography
 @font-face {
-  font-family: FrankRuhlLibre-regular;
-  src: url("../assets/global-fonts/FrankRuhlLibre-Regular.ttf");
+  font-family: Avenir Next-regular;
+  src: url("../assets/global-font/avenirNextProLT/Linotype-AvenirNextLTPro-Regular.otf");
 }
 @font-face {
-  font-family: FrankRuhlLibre-bold;
-  src: url("../assets/global-fonts/FrankRuhlLibre-Medium.ttf");
+  font-family: Avenir Next-bold;
+  src: url("../assets/global-font/avenirNextProLT/Linotype-AvenirNextLTPro-Bold.otf");
 }
 @font-face {
-  font-family: FrankRuhlLibre-bolder;
-  src: url("../assets/global-fonts/FrankRuhlLibre-Bold.ttf");
+  font-family: Avenir Next-bolder;
+  src: url("../assets/global-font/avenirNextProLT/Linotype-AvenirNextLTPro-Demi.otf");
 }
 
 //Screen Sizes
@@ -21,7 +21,7 @@
   }
 }
 @mixin larger-tablet-size {
-  @media (min-width: 1024px) and (max-width: 1439px){
+  @media (min-width: 1024px) and (max-width: 1439px) {
     @content;
   }
 }
@@ -54,11 +54,21 @@
   background-color: $button-color;
   color: $white-text-color;
   border: none;
-  border-radius: 5px;
   padding: 15px 0;
   text-transform: uppercase;
 }
-
+@mixin input-style {
+  width: 100%;
+  height: 48px;
+  box-shadow: 0 5px 24px rgba(31, 37, 59, 0.15);
+  border: 1px solid #e1e5f2;
+  font-size: 18px;
+  line-height: 58px;
+  text-indent: 5%;
+  &::placeholder {
+    color: #aaabc5;
+  }
+}
 // Typography MOBILE Styles
 @mixin header-mobile-style {
   margin: 0;

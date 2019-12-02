@@ -9,30 +9,30 @@ class Hero extends React.Component {
     render() {
         return (
             <>
-            <MediaQuery minDeviceWidth={768}>
-                {/* <section className="main__hero">
-                    <Particles className="particle-js"
-                        params={{
-                            "particles": {
-                                "number": {
-                                    "value": 140
+                <MediaQuery minDeviceWidth={768}>
+                    <section className="main__hero">
+                        <Particles className="particle-js"
+                            params={{
+                                "particles": {
+                                    "number": {
+                                        "value": 140
+                                    },
+                                    "size": {
+                                        "value": 4
+                                    }
                                 },
-                                "size": {
-                                    "value": 4
-                                }
-                            },
-                            "interactivity": {
-                                "events": {
-                                    "onhover": {
-                                        "enable": true,
-                                        "mode": "repulse"
+                                "interactivity": {
+                                    "events": {
+                                        "onhover": {
+                                            "enable": true,
+                                            "mode": "repulse"
+                                        }
                                     }
                                 }
-                            }
-                        }} />
+                            }} />
 
-                </section> */}
-                <div id="particles-js"></div>
+                    </section>
+                    <div id="particles-js"></div>
                 </MediaQuery>
                 <Header />
                 <Form />

@@ -47,59 +47,57 @@ class Form extends React.Component {
       <form className="main__form" onSubmit={this.handleSubmit}>
         <fieldset className="main__form-fieldset">
           <h1 className="main__form-fieldset__title">Toronto Real Estate</h1>
-          {/* Neighborhood Searchbar */}
           <Tabs>
             <TabList>
               <Tab>Rent</Tab>
-              <Tab>Sell</Tab>
+              <Tab>Buy</Tab>
             </TabList>
 
-            {/* FOR RENT */}
+            {/* TAB PANEL FOR RENT */}
             <TabPanel>
-              <div>
-                <h2>Apartments for rent in Toronto</h2>
-                <p>Toronto apartments, condos, penthouses, brownstones and houses for rent.</p>
+              <div className="main__form-fieldset__titles">
+                <h2 className="main__form-fieldset__titles-subtitle">Apartments for rent in Toronto</h2>
+                <p className="main__form-fieldset__titles-description">Toronto apartments, condos, penthouses, brownstones and houses for rent.</p>
               </div>
-              <div className="main__form-fieldset__neighbourhood-searchbar">
-                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
-              </div>
-
-              <div className="main__form-fieldset__price-selector">
-                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
-                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
-              </div>
-              <div className="main__form-fieldset__beds-selector">
-                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
-              </div>
-              <div className="main__form-fieldset__submit">
-                <button className="main__form-fieldset__submit-button">Submit</button>
+              <div className="main__form-fieldset__searchform">
+                <div>
+                  <input className="main__form-fieldset__searchbar" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+                </div>
+                <div className="main__form-fieldset__price-selector">
+                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Minimum" value={this.state.nameValue} onChange={this.handleNameChange}/>
+                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Maximum" value={this.state.nameValue} onChange={this.handleNameChange}/>
+                </div>
+                <div>
+                  <input className="main__form-fieldset__beds-input" name="name" type="text" value={this.state.nameValue} onChange={this.handleNameChange} />
+                </div>
+                <div>
+                  <button className="main__form-fieldset__submit-button">Submit</button>
+                </div>
               </div>
             </TabPanel>
 
-            {/* FOR SELL */}
+            {/* TAB PANEL FOR SELL */}
             <TabPanel>
-            <div>
-                <h2>Apartments for sell in Toronto</h2>
-                <p>Toronto apartments, condos, penthouses, brownstones and houses for rent.</p>
+              <div className="main__form-fieldset__titles">
+                <h2 className="main__form-fieldset__titles-subtitle">Apartments for sell in Toronto</h2>
+                <p className="main__form-fieldset__titles-description">Toronto apartments, condos, co-ops brownstones and houses for sale.</p>
               </div>
-
-              <div className="main__form-fieldset__neighbourhood-searchbar">
-                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+              <div className="main__form-fieldset__searchform">
+                <div>
+                  <input className="main__form-fieldset__searchbar" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+                </div>
+                <div className="main__form-fieldset__price-selector">
+                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Minimum" value={this.state.nameValue} onChange={this.handleNameChange}/>
+                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Maximum" value={this.state.nameValue} onChange={this.handleNameChange}/>
+                </div>
+                <div>
+                  <input className="main__form-fieldset__beds-input" name="name" type="text" value={this.state.nameValue} onChange={this.handleNameChange} />
+                </div>
+                <div>
+                  <button className="main__form-fieldset__submit-button">Submit</button>
+                </div>
               </div>
-
-              <div className="main__form-fieldset__price-selector">
-                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
-                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
-              </div>
-              <div className="main__form-fieldset__beds-selector">
-                <input className="main__form-input" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
-              </div>
-              <div className="main__form-fieldset__submit">
-                <button className="main__form-fieldset__submit-button">Submit</button>
-              </div>
-            </TabPanel>
-
-          </Tabs>
+            </TabPanel></Tabs>
         </fieldset>
       </form>
     )
