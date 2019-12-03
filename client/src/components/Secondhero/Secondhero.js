@@ -3,8 +3,11 @@ import './Secondheader.scss';
 
 class Secondhero extends React.Component {
     render() {
-        return(
-
+        return (
+            <>
+                <section className="main__secondhero">
+                </section>
+            </>
         );
     }
 }

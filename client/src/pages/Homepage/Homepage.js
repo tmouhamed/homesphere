@@ -6,7 +6,7 @@ class Homepage extends React.Component {
     render() {
         return (
             <>
-                <Hero></Hero>
+                <Hero logoImage={this.props.logoImage}></Hero>
                 <Burgermenu />
                 <main>
                 </main>

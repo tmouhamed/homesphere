@@ -34,7 +34,7 @@ class Hero extends React.Component {
                     </section>
                     <div id="particles-js"></div>
                 </MediaQuery>
-                <Header />
+                <Header logoImage={this.props.logoImage}/>
                 <Form />
             </>
         );

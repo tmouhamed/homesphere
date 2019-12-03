@@ -1,0 +1,18 @@
+@import "../../styles/base.scss";
+.main__secondhero {
+  @include flex-display-row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background:  url('../../assets/images/hero.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include tablet-size {
+    min-height: 400px;
+  }
+  @include desktop-size {
+    min-height: 670px;
+  }
+}

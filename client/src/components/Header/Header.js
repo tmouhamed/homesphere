@@ -1,16 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.scss';
-import Logo from '../../assets/logo/logo.png';
 
 class Header extends React.Component {
-    showSettings(event) {
-        event.preventDefault();
-    }
-
     render() {
+        console.log(this.props)
         return (
-            <header className="main__header">
-                <img className="main__header-logo" alt="logo" src={Logo} />
+            <header className={`main__header ${this.props.className}`}>
+                <Link to="/"><img className="main__header-logo" alt="logo" src={this.props.logoImage} /></Link>
                 <nav className="main__header-nav">
                     <ul className="main__header-nav__list">
                         <li className="main__header-nav__list-item"><a className="main__header-nav__list-link" href="/">Sell</a></li>
