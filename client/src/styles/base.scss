@@ -6,7 +6,14 @@
     background-color: black;
 }
 .main {
-    @include flex-display-column;
+    margin: $mobile-margin;
+
+    @include tablet-size {
+      margin: $tablet-margin;
+    }
+    @include desktop-size {
+      margin: $desktop-margin;
+    }
 }
 html, body {
     box-sizing: border-box;

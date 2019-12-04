@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/agent', agentData);
-app.use('/property', propertyData);
+app.use('/properties', propertyData);
 
 
 app.listen(8080, () => {

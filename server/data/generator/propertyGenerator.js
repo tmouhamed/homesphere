@@ -24,136 +24,170 @@ const writeToDisk = (array) => {
 const propertiesData = [
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
     {
         "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })

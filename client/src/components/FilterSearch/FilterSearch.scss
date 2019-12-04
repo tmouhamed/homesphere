@@ -1,0 +1,50 @@
+@import "../../styles/base.scss";
+.search__form {
+  @include flex-display-row;
+  justify-content: center;
+  padding: 20px 0;
+  border-top: 1px solid #dcebfb;
+  border-bottom: 1px solid #dcebfb;
+  margin: 0 -20px;
+
+  &-search {
+    margin-right: 25px;
+    &__input {
+      border: 1px solid #f0f0f0;
+      padding: 7.5px 10px;
+      border-radius: 5px 0 0 5px;
+    }
+    &__button {
+      background-color: #FAA916;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  &-select {
+    margin-right: 25px;
+    background-color: white;
+    border: 1px solid #f0f0f0;
+    color: #3c3956;
+    border-radius: 5px;
+    padding: 8px 10px;
+
+    & option {
+      border-color: #FAA916;
+    }
+  }
+
+  &-submit {
+    border: 1px solid #FAA916;
+    background-color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #FAA916;
+      color: white;
+    }
+  }
+}

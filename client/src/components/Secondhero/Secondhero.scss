@@ -6,13 +6,7 @@
   height: 100vh;
   background:  url('../../assets/images/hero.jpg');
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-
-  @include tablet-size {
-    min-height: 400px;
-  }
-  @include desktop-size {
-    min-height: 670px;
-  }
+  position: initial;
 }

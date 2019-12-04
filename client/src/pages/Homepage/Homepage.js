@@ -8,7 +8,7 @@ class Homepage extends React.Component {
             <>
                 <Hero logoImage={this.props.logoImage}></Hero>
                 <Burgermenu />
-                <main>
+                <main className="main">
                 </main>
             </>
         );
