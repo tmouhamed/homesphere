@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
+import Modals from '../Modal/Modal';
 
 class Header extends React.Component {
     render() {
@@ -12,7 +13,7 @@ class Header extends React.Component {
                         <li className="main__header-nav__list-item"><Link to="/properties" className="main__header-nav__list-link" href="/">Sell</Link></li>
                         <li className="main__header-nav__list-item"><Link to="/properties" className="main__header-nav__list-link" href="/">Buy</Link></li>
                         <li className="main__header-nav__list-item"><Link to="/properties" className="main__header-nav__list-link" href="/">Rent</Link></li>
-                        <li className="main__header-nav__list-item"><button className="main__header-nav__list-button">Get Started</button></li>
+                        <Modals />
                     </ul>
                 </nav>
             </header>

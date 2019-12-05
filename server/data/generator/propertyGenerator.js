@@ -137,6 +137,7 @@ const propertiesData = [
         "address": faker.fake("{{address.streetAddress}}"),
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
+        "propertyType": "Condo",
         "category": "For Rent",
         "price": faker.fake("${{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),

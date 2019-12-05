@@ -4,44 +4,6 @@ import "react-tabs/style/react-tabs.css";
 import './Form.scss';
 
 class Form extends React.Component {
-  iceCreamFlavors = ['chocolate', 'vanilla', 'peanut butter', 'mint'];
-  state = {
-    nameValue: '',
-    icValue: this.iceCreamFlavors && [this.iceCreamFlavors[0], this.iceCreamFlavors[1]]
-  }
-
-  constructor() {
-    super();
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleIceCreamChange = this.handleIceCreamChange.bind(this);
-  }
-
-  handleNameChange(e) {
-    this.setState({
-      nameValue: e.target.value.toUpperCase()
-    });
-  }
-
-  handleIceCreamChange(e) {
-    if (e.target.multiple) {
-      // for a multi-select
-      // selectedOptions is an Array-like collection. needs to be converted to an array to map.
-      this.setState({
-        icValue: Array.from(e.target.selectedOptions).map(o => o.value)
-      });
-    } else {
-      // for a single select
-      this.setState({
-        icValue: e.target.value
-      });
-    }
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-  }
-
   render() {
     return (
       <form className="main__form" onSubmit={this.handleSubmit}>
@@ -61,14 +23,14 @@ class Form extends React.Component {
               </div>
               <div className="main__form-fieldset__searchform">
                 <div>
-                  <input className="main__form-fieldset__searchbar" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+                  <input className="main__form-fieldset__searchbar" name="name" type="text" placeholder="Neighborhood" />
                 </div>
                 <div className="main__form-fieldset__price-selector">
-                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Minimum" value={this.state.nameValue} onChange={this.handleNameChange}/>
-                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Maximum" value={this.state.nameValue} onChange={this.handleNameChange}/>
+                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Minimum" />
+                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Maximum" />
                 </div>
                 <div>
-                  <input className="main__form-fieldset__beds-input" name="name" type="text" value={this.state.nameValue} onChange={this.handleNameChange} />
+                  <input className="main__form-fieldset__beds-input" name="name" type="text" />
                 </div>
                 <div>
                   <button className="main__form-fieldset__submit-button">Submit</button>
@@ -84,14 +46,14 @@ class Form extends React.Component {
               </div>
               <div className="main__form-fieldset__searchform">
                 <div>
-                  <input className="main__form-fieldset__searchbar" name="name" type="text" placeholder="Neighborhood" value={this.state.nameValue} onChange={this.handleNameChange} />
+                  <input className="main__form-fieldset__searchbar" name="name" type="text" placeholder="Neighborhood" />
                 </div>
                 <div className="main__form-fieldset__price-selector">
-                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Minimum" value={this.state.nameValue} onChange={this.handleNameChange}/>
-                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Maximum" value={this.state.nameValue} onChange={this.handleNameChange}/>
+                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Minimum" />
+                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Maximum" />
                 </div>
                 <div>
-                  <input className="main__form-fieldset__beds-input" name="name" type="text" value={this.state.nameValue} onChange={this.handleNameChange} />
+                  <input className="main__form-fieldset__beds-input" name="name" type="text"/>
                 </div>
                 <div>
                   <button className="main__form-fieldset__submit-button">Submit</button>

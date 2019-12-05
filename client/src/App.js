@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage/Homepage';
 import PropertiesPage from './pages/PropertiesPage/PropertiesPage';
 import SecondLogo from './assets/logo/secondlogo.png';
 import Logo from './assets/logo/logo.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends React.Component {
@@ -45,29 +46,29 @@ class App extends React.Component {
   filterProperty = (e) => {
     e.preventDefault();
     const filtered = this.state.properties.filter((item) => {
-      return item.beds == this.state.category && item.propertyType == this.state.propertyType || item.beds == this.state.bed || item.baths == this.state.bath || item.price == this.state.price
+      if (item.propertyType == this.state.propertyType) {
+        return item.propertyType == this.state.propertyType && item.beds == this.state.bed || item.baths == this.state.bath || item.price == this.state.price
+      }
+      else
+        console.error("err")
     })
     this.setState({
       filteredProperties: filtered
     })
   }
 
-  componentDidMount() {
-    this.getProperties();
+  sendingProperties = () => {
+    return (this.state.filteredProperties == "") ? this.state.properties : this.state.filteredProperties
   }
 
-  sendingProperties = () => {
-    // check if any filters have been added on the state
-    // return this.state.properties
+  // searchClick = () => {
+  //       this.setState({
+  //     [e.target.name]: e.target.value
+  //   })
+  // }
 
-
-    if (this.state.filteredProperties == "") {
-      console.log(this.state.properties)
-      return this.state.properties
-    }
-
-    else
-      return this.state.filteredProperties
+  componentDidMount() {
+    this.getProperties();
   }
 
   render() {

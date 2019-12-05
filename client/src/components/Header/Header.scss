@@ -2,7 +2,7 @@
 
 .main__header {
   display: none;
-  @include tablet-size {    
+  @include tablet-size {
     @include flex-display-row;
     justify-content: space-between;
     align-items: center;
@@ -46,10 +46,10 @@
         @include desktop-size {
           margin: 0;
         }
-        &:hover{
+        &:hover {
           border-bottom: 1px solid white;
         }
-        &:last-child {
+        &:nth-child(4) {
           &:hover {
             border: none;
           }
@@ -69,6 +69,11 @@
         color: white;
         @include menu-tablet-style;
         line-height: 18px;
+
+        &:hover {
+          background-color: #fff;
+          color: #3c3956;
+        }
       }
     }
   }

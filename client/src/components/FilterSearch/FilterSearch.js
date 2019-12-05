@@ -6,10 +6,6 @@ class FilterSearch extends React.Component {
         return (
             <>
                 <form className="search__form" onSubmit={this.props.filterProperty}>
-                    <div className="search__form-search">
-                        <input className="search__form-search__input" name="name" type="text" onChange={this.props.handleGeneric} />
-                        <button className="search__form-search__button">Search</button>
-                    </div>
                     <select className="search__form-select" name="propertyType" onChange={this.props.handleGeneric}>
                         <option data-display="Property Type">Property Type</option>
                         <option value="House">House</option>
