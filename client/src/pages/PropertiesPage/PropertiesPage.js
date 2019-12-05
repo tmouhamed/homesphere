@@ -9,10 +9,6 @@ import FilterSearch from '../../components/FilterSearch/FilterSearch';
 
 
 class PropertiesPage extends React.Component {
-    // data
-    // searchFunc
-
-
     render() {
         return (
             <>
@@ -21,8 +17,8 @@ class PropertiesPage extends React.Component {
                 <Burgermenu />
                 <Secondhero />
                 <main className="main">
-                    <FilterSearch searchFunc={this.props.searchFunc} />
-                    <Listings properties={this.props.properties} />
+                    <FilterSearch handleGeneric={this.props.handleGeneric} filterProperty={this.props.filterProperty}/>
+                    <Listings sendingProperties={this.props.sendingProperties} />
                 </main>
             </>
         );

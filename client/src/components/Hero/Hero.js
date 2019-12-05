@@ -15,7 +15,7 @@ class Hero extends React.Component {
                             params={{
                                 "particles": {
                                     "number": {
-                                        "value": 140
+                                        "value": 240
                                     },
                                     "size": {
                                         "value": 4

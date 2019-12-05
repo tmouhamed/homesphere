@@ -1,4 +1,4 @@
-const faker = require('faker');
+const faker = require('faker/locale/en_CA');
 const uuid = require('uuid/v4');
 const propertyArray = require('../propertiesData');
 const fs = require('fs');

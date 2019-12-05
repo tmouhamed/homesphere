@@ -7,9 +7,12 @@ import Bath from '../../assets/icons/bathtub.svg';
 
 class Listings extends React.Component {
     render() {
+        //depends on the whole properties are sent or the filtered ones
+        const properties = this.props.sendingProperties();
         return (
+            
             <section className="main__listings">
-                {this.props.properties.map((item) => {
+                {properties.map((item) => {
                     return (
                         <article className="main__listings-card" key={item.propertyId}>
                             <img className="main__listings-card__image" src={House} alt="house" />

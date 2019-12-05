@@ -13,6 +13,10 @@
       border: 1px solid #f0f0f0;
       padding: 7.5px 10px;
       border-radius: 5px 0 0 5px;
+
+      &:focus {
+        outline: none;
+      }
     }
     &__button {
       background-color: #FAA916;
@@ -31,8 +35,8 @@
     border-radius: 5px;
     padding: 8px 10px;
 
-    & option {
-      border-color: #FAA916;
+    &:focus {
+      outline: none;
     }
   }
 
