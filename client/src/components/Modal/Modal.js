@@ -24,7 +24,7 @@ class Modals extends React.Component {
 
     render() {
         const customStyles = {
-            height: '72%'
+            height: '75%'
         };
         return (
             <>

@@ -6,6 +6,9 @@ import storageManager from '../../helpers/storageApi';
 
 class Signup extends React.Component {
     url = "http://localhost:8080";
+    state = {
+        checkbox: false
+    }
 
     postNewUser = (event, name) => {
         const newUser = {
@@ -15,11 +18,12 @@ class Signup extends React.Component {
             email: event.target.email.value,
             phone: event.target.phone.value,
             password: event.target.password.value,
-            checkbox: event.target.checkbox.value,
+            checkbox: this.state.checkbox,
         }
         return Axios.post(`${this.url}/agents/`, newUser)
             .then(response => {
-                this.props.show();
+                alert('You Have Successfully Signed Up!')
+                this.props.hide();
             })
     }
 
@@ -27,9 +31,16 @@ class Signup extends React.Component {
         event.preventDefault();
         this.postNewUser(event);
         this.props.checkIfLoggedIn();
+        this.props.hide();
+    }
+    checkboxValue = (event) => {
+        this.setState({
+            [event.target.name]: event.target.checked
+        })
     }
 
     render() {
+
         return (
             <>
                 <Form onSubmit={this.submitHandler}>
@@ -59,10 +70,13 @@ class Signup extends React.Component {
                         <Form.Control type="password" name="password" placeholder="Password" required />
                     </Form.Group>
                     <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" name="checkbox" label="Are you an agent ?" />
+                        <Form.Check type="checkbox" name="checkbox" label="Are you an agent ?"  onClick={this.checkboxValue}/>
                     </Form.Group>
-                    <Button variant="primary" type="submit"> Sign Me Up </Button>
-                    {storageManager.getEmailFromStore() ? <Form.Group><Form.Label> You have successeflly signed up </Form.Label></Form.Group> : null}
+                    <Form.Group>
+                        <Button variant="primary" type="submit"> Sign Me Up </Button></Form.Group>
+                    <Form.Group>
+                        <Form.Label> {storageManager.getEmailFromStore() ? 'You have successeflly signed up' : null}</Form.Label>
+                    </Form.Group>
                 </Form>
             </>
         )
