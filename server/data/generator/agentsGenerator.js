@@ -35,25 +35,29 @@ const agentsData = [
         "agentId": uuid(3),
         "firstName": faker.fake("{{name.firstName}}"),
         "lastName": faker.fake("{{name.lastName}}"),
-        "phone": faker.fake("{{phone.phoneNumberFormat}}")
+        "phone": faker.fake("{{phone.phoneNumberFormat}}"),
+        "userName": ''
     },
     {
         "agentId": uuid(3),
         "firstName": faker.fake("{{name.firstName}}"),
         "lastName": faker.fake("{{name.lastName}}"),
-        "phone": faker.fake("{{phone.phoneNumberFormat}}")
+        "phone": faker.fake("{{phone.phoneNumberFormat}}"),
+        "userName": ''
     },
     {
         "agentId": uuid(3),
         "firstName": faker.fake("{{name.firstName}}"),
         "lastName": faker.fake("{{name.lastName}}"),
-        "phone": faker.fake("{{phone.phoneNumberFormat}}")
+        "phone": faker.fake("{{phone.phoneNumberFormat}}"),
+        "userName": ''
     },
     {
         "agentId": uuid(3),
         "firstName": faker.fake("{{name.firstName}}"),
         "lastName": faker.fake("{{name.lastName}}"),
-        "phone": faker.fake("{{phone.phoneNumberFormat}}")
+        "phone": faker.fake("{{phone.phoneNumberFormat}}"),
+        "userName": ''
     }
 ]
 

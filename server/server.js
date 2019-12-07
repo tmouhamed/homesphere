@@ -11,7 +11,8 @@ const app = express ();
 app.use(cors());
 app.use(express.json());
 
-app.use('/agent', agentData);
+app.use(express.static('public'));
+app.use('/agents', agentData);
 app.use('/properties', propertyData);
 
 

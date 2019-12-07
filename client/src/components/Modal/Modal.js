@@ -3,11 +3,15 @@ import Rodal from 'rodal';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import '../Header/Header.scss';
 import 'rodal/lib/rodal.css';
+import Login from '../Login/Login';
+import Signup from '../Signup/Signup';
 
 class Modals extends React.Component {
     constructor(props) {
         super(props);
         this.state = { visible: false };
+        this.show = this.show.bind(this);
+        this.hide = this.hide.bind(this);
     }
 
     show() {
@@ -20,12 +24,11 @@ class Modals extends React.Component {
 
     render() {
         const customStyles = {
-            height: '70%'
+            height: '72%'
         };
         return (
             <>
                 <li className="main__header-nav__list-item"><button className="main__header-nav__list-button" onClick={this.show.bind(this)}>Get Started</button></li>
-
                 <Rodal customStyles={customStyles} visible={this.state.visible} onClose={this.hide.bind(this)}>
                     <div>
                         <Tabs>
@@ -35,39 +38,10 @@ class Modals extends React.Component {
                             </TabList>
                             {/* SIGN IN  */}
                             <TabPanel>
-                                <form>
-                                    <div className="form-group">
-                                        <label htmlFor="exampleInputEmail1">Email address</label>
-                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="exampleInputPassword1">Password</label>
-                                        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-                                    </div>
-                                    <button type="submit" className="btn btn-primary">Submit</button>
-                                </form>
+                                <Login hide={this.hide} agents={this.props.agents} checkIfLoggedIn={this.props.checkIfLoggedIn} />
                             </TabPanel>
-                            {/* SIGN UP */}
                             <TabPanel>
-                                <form>
-                                    <div className="form-group">
-                                        <label htmlFor="exampleInputFirstName">First Name</label>
-                                        <input type="firstName" className="form-control" id="exampleInputFirstName" placeholder="John" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="exampleInputLastName">Last Name</label>
-                                        <input type="lastName" className="form-control" id="exampleInputLirstName" placeholder="Wick" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="exampleInputEmail1">Email address</label>
-                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="exampleInputPassword1">Password</label>
-                                        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-                                    </div>
-                                    <button type="submit" className="btn btn-primary">Submit</button>
-                                </form>
+                                <Signup show={this.show} agents={this.props.agents} hide={this.hide} checkIfLoggedIn={this.props.checkIfLoggedIn} />
                             </TabPanel>
                         </Tabs>
                     </div>

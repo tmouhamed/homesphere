@@ -23,6 +23,10 @@ html, body {
     @include tablet-size {
       @include pargraph-tablet-style;
     }
+
+    & a:hover{
+      text-decoration: none;
+    }
 }
   *, *:before, *:after {
     box-sizing: inherit;

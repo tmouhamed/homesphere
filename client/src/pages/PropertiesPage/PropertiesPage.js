@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 import Burgermenu from '../../components/Burgermenu/Burgermenu';
 import Secondhero from '../../components/Secondhero/Secondhero';
 import Header from '../../components/Header/Header';
@@ -13,7 +14,7 @@ class PropertiesPage extends React.Component {
         return (
             <>
                 {/* use a classnames npm package to use the same header but add more changes for this scpecific page*/}
-                <Header className={classnames("main__secondHeader", this.props.className)} logoImage={this.props.logoImage} />
+                <Header logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn}  isLoggedIn= {this.props.isLoggedIn} agents={this.props.agents} className={classnames("main__secondHeader", this.props.className)} logoImage={this.props.logoImage} />
                 <Burgermenu />
                 <Secondhero />
                 <main className="main">

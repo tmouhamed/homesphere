@@ -1,8 +1,10 @@
 import React from 'react';
 import './Listings.scss';
-import House from '../../assets/images/condo.jpg';
+// import House from '../../assets/images/condo.jpg';
 import Bed from '../../assets/icons/bed.svg';
 import Bath from '../../assets/icons/bathtub.svg';
+import { Link } from 'react-router-dom';
+import House1 from '../../assets/images/house4-1.jpg';
 
 
 class Listings extends React.Component {
@@ -10,21 +12,22 @@ class Listings extends React.Component {
         //depends on the whole properties are sent or the filtered ones
         const properties = this.props.sendingProperties();
         return (
-            
+
             <section className="main__listings">
                 {properties.map((item) => {
                     return (
-                        <article className="main__listings-card" key={item.propertyId}>
-                            <img className="main__listings-card__image" src={House} alt="house" />
+                        <Link to="/property" className="main__listings-card" key={item.propertyId}>
+                            <img className="main__listings-card__image" src={House1} alt="house" />
                             <span className="main__listings-card__category">{item.category}</span>
-                            <h2 className="main__listings-card__title">{item.address}</h2>
+                            <h4 className="main__listings-card__title">{item.address}</h4>
                             <div className="main__listings-card__details">
                                 <p>{`${item.beds}`} </p>
                                 <img alt="bed" src={Bed} />
                                 <p>{`| ${item.baths}`}</p>
                                 <img alt="bath" src={Bath} />
+                                <p>{`$ ${item.price}`}</p>
                             </div>
-                        </article>
+                        </Link>
                     );
                 })}
             </section>

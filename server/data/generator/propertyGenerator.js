@@ -20,7 +20,6 @@ const addAgent = (array) => {
 const writeToDisk = (array) => {
     fs.writeFileSync('./data/propertiesData.json', JSON.stringify(array))
 }
-
 const propertiesData = [
     {
         "propertyId": uuid(3),
@@ -29,7 +28,19 @@ const propertiesData = [
         "city": "Toronto",
         "propertyType": "Condo",
         "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "price": faker.fake("{{commerce.price}}"),
+        "beds": faker.random.number({ 'min': 1, 'max': 4 }),
+        "baths": faker.random.number({ 'min': 1, 'max': 4 }),
+        "image": 'public/assets/house.jpg'
+    },
+    {
+        "propertyId": uuid(3),
+        "address": faker.fake("{{address.streetAddress}}"),
+        "zipCode": faker.fake("{{address.zipCode}}"),
+        "city": "Toronto",
+        "propertyType": "Condo",
+        "category": "For Rent",
+        "price": faker.fake("{{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -40,7 +51,7 @@ const propertiesData = [
         "city": "Toronto",
         "propertyType": "Condo",
         "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "price": faker.fake("{{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -51,7 +62,7 @@ const propertiesData = [
         "city": "Toronto",
         "propertyType": "Condo",
         "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "price": faker.fake("{{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -62,7 +73,7 @@ const propertiesData = [
         "city": "Toronto",
         "propertyType": "Condo",
         "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "price": faker.fake("{{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -73,7 +84,7 @@ const propertiesData = [
         "city": "Toronto",
         "propertyType": "Condo",
         "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "price": faker.fake("{{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -84,7 +95,7 @@ const propertiesData = [
         "city": "Toronto",
         "propertyType": "Condo",
         "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "price": faker.fake("{{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -95,7 +106,7 @@ const propertiesData = [
         "city": "Toronto",
         "propertyType": "Condo",
         "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "price": faker.fake("{{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -106,7 +117,7 @@ const propertiesData = [
         "city": "Toronto",
         "propertyType": "Condo",
         "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "price": faker.fake("{{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -117,7 +128,7 @@ const propertiesData = [
         "city": "Toronto",
         "propertyType": "Condo",
         "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "price": faker.fake("{{commerce.price}}"),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -127,8 +138,8 @@ const propertiesData = [
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
         "propertyType": "Condo",
-        "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "category": "For Sell",
+        "price": faker.finance.amount(1,2,6),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -138,8 +149,8 @@ const propertiesData = [
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
         "propertyType": "Condo",
-        "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "category": "For Sell",
+        "price": faker.finance.amount(1,2,6),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -149,8 +160,8 @@ const propertiesData = [
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
         "propertyType": "Condo",
-        "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "category": "For Sell",
+        "price": faker.finance.amount(1,2,6),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -160,8 +171,8 @@ const propertiesData = [
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
         "propertyType": "Condo",
-        "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "category": "For Sell",
+        "price": faker.finance.amount(1,2,6),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -171,8 +182,8 @@ const propertiesData = [
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
         "propertyType": "Condo",
-        "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "category": "For Sell",
+        "price": faker.finance.amount(1,2,6),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -182,8 +193,8 @@ const propertiesData = [
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
         "propertyType": "Condo",
-        "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "category": "For Sell",
+        "price": faker.finance.amount(1,2,6),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     },
@@ -193,19 +204,8 @@ const propertiesData = [
         "zipCode": faker.fake("{{address.zipCode}}"),
         "city": "Toronto",
         "propertyType": "Condo",
-        "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
-        "beds": faker.random.number({ 'min': 1, 'max': 4 }),
-        "baths": faker.random.number({ 'min': 1, 'max': 4 })
-    },
-    {
-        "propertyId": uuid(3),
-        "address": faker.fake("{{address.streetAddress}}"),
-        "zipCode": faker.fake("{{address.zipCode}}"),
-        "city": "Toronto",
-        "propertyType": "Condo",
-        "category": "For Rent",
-        "price": faker.fake("${{commerce.price}}"),
+        "category": "For Sell",
+        "price": faker.finance.amount(1,2,6),
         "beds": faker.random.number({ 'min': 1, 'max': 4 }),
         "baths": faker.random.number({ 'min': 1, 'max': 4 })
     }
