@@ -30,36 +30,20 @@ const writeOnDisk = (array) => {
     fs.writeFileSync('./data/agentsData.json', JSON.stringify(array))
 }
 
-const agentsData = [
-    {
-        "agentId": uuid(3),
+let agentsCount = 5
+let agentsData = []
+for (var i = 0; i < agentsCount; i++)
+{
+    let newAgent = {
+        "agentId": uuid(10),
         "firstName": faker.fake("{{name.firstName}}"),
         "lastName": faker.fake("{{name.lastName}}"),
         "phone": faker.fake("{{phone.phoneNumberFormat}}"),
-        "userName": ''
-    },
-    {
-        "agentId": uuid(3),
-        "firstName": faker.fake("{{name.firstName}}"),
-        "lastName": faker.fake("{{name.lastName}}"),
-        "phone": faker.fake("{{phone.phoneNumberFormat}}"),
-        "userName": ''
-    },
-    {
-        "agentId": uuid(3),
-        "firstName": faker.fake("{{name.firstName}}"),
-        "lastName": faker.fake("{{name.lastName}}"),
-        "phone": faker.fake("{{phone.phoneNumberFormat}}"),
-        "userName": ''
-    },
-    {
-        "agentId": uuid(3),
-        "firstName": faker.fake("{{name.firstName}}"),
-        "lastName": faker.fake("{{name.lastName}}"),
-        "phone": faker.fake("{{phone.phoneNumberFormat}}"),
+        "photo": faker.fake("{{image.people}}"),
         "userName": ''
     }
-]
+    agentsData.push(newAgent);
+}
 
 let newArray = addProperty(agentsData);
 writeOnDisk(newArray);

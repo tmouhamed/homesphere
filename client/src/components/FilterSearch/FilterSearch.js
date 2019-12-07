@@ -16,7 +16,7 @@ class FilterSearch extends React.Component {
                     <select name="category" className="search__form-select" onChange={this.props.handleGeneric}>
                         <option data-display="category">Category</option>
                         <option value="For Rent">Rent</option>
-                        <option value="For Sell">Sell</option>
+                        <option value="For Sale">Sell</option>
                     </select>
                     <select name="bed" className="search__form-select" onChange={this.props.handleGeneric}>
                         <option data-display="Bedrooms">Bedrooms</option>

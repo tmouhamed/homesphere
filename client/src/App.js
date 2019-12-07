@@ -56,12 +56,10 @@ class App extends React.Component {
 
   //filter from the all properties
   filterProperty = (e, name) => {
-    console.log(e.target.name)
     e.preventDefault();
     const filtered = this.state.properties.filter((item) => {
-      return (item.category == this.state.category && item.propertyType == this.state.propertyType && item.beds == this.state.bed && item.baths == this.state.bath) || (item.category == this.state.category) || (item.category == this.state.category && item.beds == this.state.bed) || (item.category == this.state.category && item.beds == this.state.bed && item.baths == this.state.bath)
+      return (item.category == this.state.category && item.propertyType == this.state.propertyType && item.beds == this.state.bed && item.baths == this.state.bath) || (item.category == this.state.category) || (item.category == this.state.category) || (item.category == this.state.category && item.beds == this.state.bed) || (item.category == this.state.category && item.beds == this.state.bed && item.baths == this.state.bath)
     })
-    console.log(filtered);
     this.setState({
       filteredProperties: filtered
     })
