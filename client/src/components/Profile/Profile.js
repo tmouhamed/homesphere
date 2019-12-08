@@ -5,9 +5,9 @@ class Profile extends React.Component {
         return (
             <>
                 <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic"> Me </Dropdown.Toggle>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic"> MY ACCOUNT </Dropdown.Toggle>
                     <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">Applications</Dropdown.Item>
+                        <Dropdown.Item href="/saved">Saved</Dropdown.Item>
                         <Dropdown.Item onClick={this.props.logOut}>Sign Out</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown></>

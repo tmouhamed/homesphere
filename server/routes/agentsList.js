@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const uuid = require('uuid/v4');
-require('../data/generator/agentsGenerator');
+require('../data/generator/dataGenerator');
 const agentsData = require('../data/agentsData.json')
 
 router.get('/', (request, response) => {

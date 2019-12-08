@@ -14,11 +14,14 @@ class Login extends React.Component {
         };
     }
 
-    login = event => {
+    login = (event) => {
         event.preventDefault();
         storageManager.setEmailInStore(this.state.email);
+        
         const { agents } = this.props;
         if (this.state.email && !this.state.passwordError) {
+            console.log(agents);
+            
             const foundAgent = agents.find((agent) => {
                 return agent.email == this.state.email && agent.password == this.state.password
             })

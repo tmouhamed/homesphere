@@ -3,10 +3,10 @@
   @include flex-display-row;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh;
+  height: 59vh;
   background:  url('../../assets/images/hero.jpg');
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   position: initial;
 }

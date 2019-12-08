@@ -9,12 +9,18 @@ import House1 from '../../assets/images/house4-1.jpg';
 
 class Listings extends React.Component {
     render() {
+        let properties = [];
         //depends on the whole properties are sent or the filtered ones
-        const properties = this.props.sendingProperties();
+        if (this.props.sendingProperties) {
+            properties = this.props.sendingProperties();
+        } else {
+            properties = this.props.assignedProperties;
+        }
         return (
 
             <section className="main__listings">
                 {properties.map((item) => {
+
                     return (
                         <Link to="/property" className="main__listings-card" key={item.propertyId}>
                             <img className="main__listings-card__image" src={House1} alt="house" />
