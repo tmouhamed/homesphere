@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
-import Modals from '../Modal/Modal';
 import Profile from '../Profile/Profile';
+import Modals from '../Modals/Modals';
 
 class Header extends React.Component {
     render() {

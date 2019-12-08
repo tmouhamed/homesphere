@@ -40,21 +40,55 @@
     &__left {
       width: 65%;
       margin-right: 25px;
+
       & h2 {
         @include tablet-size {
-          @include header2-tablet-style;
+          @include header-tablet-style;
+
+          font-family: $demibold-font;
           margin-bottom: 15px;
         }
       }
+
       & p {
         @include tablet-size {
           line-height: 26px;
         }
       }
-    }
 
-    &__right {
-      width: 25%;
+      &-secondTitle {
+        @include menu-tablet-style;
+        font-family: $demibold-font;
+        font-size: 20px;
+        line-height: 24px;
+        margin: 48px 0 24px 0;
+      }
+
+      &-amenities {
+        @include flex-display-row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        &__amenity {
+          display: flex;
+          padding: 10px 0;
+          width: 33.33%;
+          text-align: left;
+        }
+        & img {
+          max-width: 25px;
+          max-height: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+    
+    &__right , &__right2{
+      @include flex-display-column;
+      align-items: center;
+      text-align: center;
+      width: 30%;
+      padding: 0 30px;
       background: #fff;
       border-radius: 10px;
       padding-top: 20px;
@@ -63,12 +97,52 @@
       box-shadow: 0 14px 40px rgba(0, 22, 84, 0.08);
 
       &-avatar {
+        @include subheader-tablet-style;
         width: 120px;
         height: 120px;
+        margin-bottom: 30px;
         line-height: 120px;
-        margin: 20px 0;
+        text-align: center;
+        background-color: #21277a;
+        color: white;
         box-shadow: 0 14px 40px rgba(0, 22, 84, 0.08);
+        border-radius: 50%;
       }
+
+      &-personTitle {
+        @include header2-tablet-style;
+      }
+
+      &-jobTitle {
+        @include pargraph-tablet-style;
+        margin: 15px 0;
+        font-size: 18px;
+        color: #c6cbd3;
+      }
+
+      &-fromTitle {
+        @include subheader-tablet-style;
+        color: #3063AE;
+      }
+
+      &-contactButton {
+        background-color: #faa916;
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 30px;
+        margin: 20px 0;
+
+        &:focus {
+          outline: none;
+          border: none;
+        }
+      }
+    }
+
+    &__right2 {
+      width: 100% !important;
+      box-shadow: none;
     }
   }
 }
