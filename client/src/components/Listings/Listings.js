@@ -22,7 +22,7 @@ class Listings extends React.Component {
                 {properties.map((item) => {
 
                     return (
-                        <Link to="/property" className="main__listings-card" key={item.propertyId}>
+                        <Link to={`/properties/${item.propertyId}`} className="main__listings-card" key={item.propertyId}>
                             <img className="main__listings-card__image" src={House1} alt="house" />
                             <span className="main__listings-card__category">{item.category}</span>
                             <h4 className="main__listings-card__title">{item.address}</h4>

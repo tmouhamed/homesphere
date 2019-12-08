@@ -11,7 +11,6 @@ router.get('/', (request, response) => {
 })
 
 router.post('/', (request, response) => {
-    console.log(request.body);
     const agent = request.body;
 
     const newAgent = {

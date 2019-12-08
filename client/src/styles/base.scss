@@ -3,7 +3,6 @@
 
 .App {
     @include flex-display-column;
-    background-color: black;
 }
 .main {
     margin: $mobile-margin;
@@ -17,6 +16,7 @@
 }
 html, body {
     box-sizing: border-box;
+    background-color: white !important;
     margin: 0;
     @include pargraph-mobile-style;
 

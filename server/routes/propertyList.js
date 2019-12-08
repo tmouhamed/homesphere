@@ -9,4 +9,11 @@ router.get('/', (request, response) => {
 
 })
 
+router.get('/:id', (request, response) => {
+    const matchingProperty = propertiesData.find(element => element.propertyId === request.params.id);
+    matchingProperty ?
+        response.status(201).json(matchingProperty) :
+        response.status(404).json({ message: 'No video with that id exists' });
+})
+
 module.exports = router;

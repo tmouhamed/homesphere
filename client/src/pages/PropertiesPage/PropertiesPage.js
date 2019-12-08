@@ -19,7 +19,7 @@ class PropertiesPage extends React.Component {
                 <Secondhero />
                 <main className="main">
                     <FilterSearch handleGeneric={this.props.handleGeneric} searchClick={this.props.searchClick} filterProperty={this.props.filterProperty}/>
-                    <Listings sendingProperties={this.props.sendingProperties} />
+                    <Listings sendingProperties={this.props.sendingProperties} getPropertybyID={this.props.getPropertybyID}/>
                 </main>
             </>
         );

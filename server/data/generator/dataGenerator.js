@@ -48,7 +48,7 @@ if (fs.existsSync("./data/propertiesData.json") && fs.existsSync("./data/agentsD
             "price": faker.fake("{{commerce.price}}"),
             "beds": faker.random.number({ 'min': 1, 'max': 4 }),
             "baths": faker.random.number({ 'min': 1, 'max': 4 }),
-            // "image": str.concat("public/assets/", propertiesImages[faker.random.number({ 'min': 0, 'max': propertiesImages.length-1 })])
+            "image": str.concat("public/assets/", propertiesImages[faker.random.number({ 'min': 0, 'max': propertiesImages.length-1 })])
         };
         propertiesData.push(newProperty);
     }
@@ -65,7 +65,7 @@ if (fs.existsSync("./data/propertiesData.json") && fs.existsSync("./data/agentsD
             "firstName": faker.fake("{{name.firstName}}"),
             "lastName": faker.fake("{{name.lastName}}"),
             "phone": faker.fake("{{phone.phoneNumberFormat}}"),
-            "photo": faker.fake("{{image.people}}"),
+            "photo": faker.fake("{{image.avatar}}"),
             "userName": ''
         }
         agentsData.push(newAgent);
