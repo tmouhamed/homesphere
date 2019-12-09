@@ -22,8 +22,9 @@ class Property extends React.Component {
         this.props.getPropertybyID(this.props.match.params.id);
     }
     render() {
-        const { address, baths, beds, category, city, price, propertyType, zipCode, agentId } = this.props.propertybyId;
-        const thisAgent = this.props.agents.find((agent) => { return agent.agentId == agentId });
+        const { address, baths, beds, category, city, price, propertyType, zipCode, agentId , image} = this.props.propertybyId;
+        const thisAgent = this.props.agents.find((agent) => { return agent.agentId == agentId })
+        
         let slides = [
             <img src={Image1} alt="1" />,
             <img src={Image2} alt="2" />,

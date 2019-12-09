@@ -22,9 +22,12 @@ class Listings extends React.Component {
 
             <section className="main__listings">
                 {properties.map((item) => {
-                    return (
+                     const { image } = item;
+                     console.log(image);
+                     
+                     return (
                         <section className="main__listings-card" key={item.propertyId}>
-                            <img className="main__listings-card__image" src={House1} alt="house" />
+                            {item.image ? <img className="main__listings-card__image" src={item.image[0]} alt="house" /> : <img className="main__listings-card__image" src={item.image[0]} alt="house" />}
                             <span className="main__listings-card__category">{item.category}</span>
                             {this.props.assignedProperties ?
                                 <>

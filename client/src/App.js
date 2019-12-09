@@ -104,14 +104,8 @@ class App extends React.Component {
     if (returnedEmail) {
       const filteredAgentEmail = agents.find(agent => { return agent.email === returnedEmail });
       const filteredApplicantEmail = applicants.find(applicant => { return applicant.email === returnedEmail });
-
-      console.log(returnedEmail, filteredAgentEmail, filteredApplicantEmail, agents, applicants);
-      
-
       let propertiesAppliedFor = [];
       if (filteredAgentEmail) {
-        console.log('existing properties: ', this.state.properties.slice(), this.state.agentApplicationId.slice());
-
         for (let i = 0; i < filteredAgentEmail.properties.length; i++) {
           for (let j = 0; j < this.state.properties.length; j++) {
             if (this.state.properties[j].propertyId == filteredAgentEmail.properties[i]) {
