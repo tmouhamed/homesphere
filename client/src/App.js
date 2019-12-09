@@ -36,7 +36,7 @@ class App extends React.Component {
   }
 
   getProperties = () => {
-    Axios.get(`${this.Url}/properties`)
+    return Axios.get(`${this.Url}/properties`)
       .then(response => {
         this.setState({
           properties: response.data
@@ -45,7 +45,7 @@ class App extends React.Component {
   }
 
   getAgents = () => {
-    Axios.get(`${this.Url}/agents`)
+    return Axios.get(`${this.Url}/agents`)
       .then(response => {
         this.setState({
           agents: response.data
@@ -54,7 +54,7 @@ class App extends React.Component {
   }
 
   getApplicants = () => {
-    Axios.get(`${this.Url}/applicants`)
+    return Axios.get(`${this.Url}/applicants`)
       .then(response => {
         this.setState({
           applicants: response.data
@@ -84,7 +84,7 @@ class App extends React.Component {
     e.preventDefault();
 
     const filtered = this.state.properties.filter((item) => {
-      return (item.category == this.state.category && item.propertyType == this.state.propertyType && item.beds == this.state.bed && item.baths == this.state.bath) || (item.category == this.state.category) || (item.category == this.state.category) || (item.category == this.state.category && item.beds == this.state.bed) || (item.category == this.state.category && item.beds == this.state.bed && item.baths == this.state.bath)
+      return (item.category == this.state.category && item.propertyType == this.state.propertyType && item.beds == this.state.bed && item.baths == this.state.bath) || (item.category == this.state.category) || (item.propertyType == this.state.propertyType) || (item.category == this.state.category) || (item.category == this.state.category && item.beds == this.state.bed) || (item.category == this.state.category && item.beds == this.state.bed && item.baths == this.state.bath)
     })
     this.setState({
       filteredProperties: filtered
@@ -104,11 +104,17 @@ class App extends React.Component {
     if (returnedEmail) {
       const filteredAgentEmail = agents.find(agent => { return agent.email === returnedEmail });
       const filteredApplicantEmail = applicants.find(applicant => { return applicant.email === returnedEmail });
+
+      console.log(returnedEmail, filteredAgentEmail, filteredApplicantEmail, agents, applicants);
+      
+
       let propertiesAppliedFor = [];
       if (filteredAgentEmail) {
+        console.log('existing properties: ', this.state.properties.slice(), this.state.agentApplicationId.slice());
+
         for (let i = 0; i < filteredAgentEmail.properties.length; i++) {
           for (let j = 0; j < this.state.properties.length; j++) {
-            if (this.state.properties[j].propertyId == this.state.agentApplicationId[i]) {
+            if (this.state.properties[j].propertyId == filteredAgentEmail.properties[i]) {
               assignedagentProperties.push(this.state.properties[j]);
               break;
             }
@@ -152,10 +158,15 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getProperties();
-    this.getAgents();
-    this.getApplicants();
+    this.init();
+  }
+
+  async init() {
+    await this.getProperties();
+    await this.getAgents();
+    await this.getApplicants();
     this.checkIfLoggedIn();
+    this.userData();
   }
 
   render() {

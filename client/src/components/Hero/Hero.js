@@ -11,7 +11,7 @@ class Hero extends React.Component {
             <>
                 <MediaQuery minDeviceWidth={768}>
                     <section className="main__hero">
-                        {/* <Particles className="particle-js"
+                        <Particles className="particle-js"
                             params={{
                                 "particles": {
                                     "number": {
@@ -29,12 +29,11 @@ class Hero extends React.Component {
                                         }
                                     }
                                 }
-                            }} /> */}
-
+                            }} />
                     </section>
                     <div id="particles-js"></div>
                 </MediaQuery>
-                <Header agents={this.props.agents} logoImage={this.props.logoImage}/>
+                <Header agents={this.props.agents} logoImage={this.props.logoImage} />
                 <Form />
             </>
         );

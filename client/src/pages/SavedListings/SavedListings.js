@@ -7,9 +7,10 @@ import Listings from '../../components/Listings/Listings';
 import './SavedListings.scss';
 
 class SavedListings extends React.Component {
-    componentWillUpdate() {
+    // componentDidMount(){
 
-    }
+    //     this.props.userData();
+    // }
     render() {
         return (
             <>
@@ -17,7 +18,7 @@ class SavedListings extends React.Component {
                 <main className="main">
                     <Tabs>
                         <TabList>
-                            <Tab onClick={() => this.props.userData()}>My Properties</Tab>
+                            <Tab >My Properties</Tab>
                         </TabList>
                         <TabPanel>
                             <Listings agentApplicationId={this.props.agentApplicationId} assignedProperties={this.props.assignedProperties} applicants={this.props.applicants}/>
