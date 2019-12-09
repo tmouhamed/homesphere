@@ -10,4 +10,19 @@ router.get('/', (request, response) => {
 
 })
 
+router.post('/', (request, response) => {
+    const applicant = request.body;
+
+    const newApplicant = {
+        id: uuid(3),
+        ...applicant
+    }
+    
+    applicantsData.push(newApplicant);
+
+    response.status(200).send(newApplicant)
+
+})
+
+
 module.exports = router;

@@ -16,22 +16,22 @@ class App extends React.Component {
   Url = "http://localhost:8080";
   constructor() {
     super();
+    this.state = {
+      properties: [],
+      filteredProperties: [],
+      agents: [],
+      agentApplicationId: [],
+      assignedProperties: [],
+      applicants: [],
+      propertyType: '',
+      category: '',
+      bed: '',
+      bath: '',
+      price: [],
+      isLoggedIn: false,
+      oneProperty: []
+    }
     this.handleGeneric = this.handleGeneric.bind(this);
-  }
-
-  state = {
-    properties: [],
-    filteredProperties: [],
-    agents: [],
-    agentApplicationId: [],
-    assignedProperties: [],
-    propertyType: '',
-    category: '',
-    bed: '',
-    bath: '',
-    price: [],
-    isLoggedIn: false,
-    oneProperty: []
   }
 
   getProperties = () => {
@@ -52,15 +52,24 @@ class App extends React.Component {
       })
   }
 
+  getApplicants = () => {
+    Axios.get(`${this.Url}/applicants`)
+      .then(response => {
+        this.setState({
+          applicants: response.data
+        })
+      })
+  }
+
   getPropertybyID = (id) => {
-      if (id) {
-          Axios.get(`${this.Url}/properties/${id}/`)
-              .then(response => {
-                  this.setState({
-                    oneProperty: response.data
-                  })
-              })
-      }
+    if (id) {
+      Axios.get(`${this.Url}/properties/${id}/`)
+        .then(response => {
+          this.setState({
+            oneProperty: response.data
+          })
+        })
+    }
   }
   //this for filter form inputs
   handleGeneric(e) {
@@ -127,6 +136,7 @@ class App extends React.Component {
   componentDidMount() {
     this.getProperties();
     this.getAgents();
+    this.getApplicants();
     this.checkIfLoggedIn();
   }
   render() {
@@ -135,8 +145,8 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route path='/' exact render={() => <Homepage logoImage={Logo} agents={this.state.agents} />} />
-            <Route path='/properties' exact render={() => <PropertiesPage getPropertybyID={this.getPropertybyID} logoImage={SecondLogo} agents={this.state.agents} sendingProperties={this.sendingProperties} handleGeneric={this.handleGeneric} filterProperty={this.filterProperty} isLoggedIn={this.state.isLoggedIn} checkIfLoggedIn={this.checkIfLoggedIn} logOut={this.logOut} />} />
-            <Route path='/properties/:id' render={(props) => <Property {...props} logoImage={SecondLogo} agents={this.state.agents} getPropertybyID={this.getPropertybyID} propertybyId={this.state.oneProperty}/>} />
+            <Route path='/properties' exact render={() => <PropertiesPage getPropertybyID={this.getPropertybyID} logoImage={SecondLogo} applicants={this.state.applicants} agents={this.state.agents} sendingProperties={this.sendingProperties} handleGeneric={this.handleGeneric} filterProperty={this.filterProperty} isLoggedIn={this.state.isLoggedIn} checkIfLoggedIn={this.checkIfLoggedIn} logOut={this.logOut} />} />
+            <Route path='/properties/:id' render={(props) => <Property {...props} logoImage={SecondLogo} agents={this.state.agents} getPropertybyID={this.getPropertybyID} propertybyId={this.state.oneProperty} sendingProperties={this.sendingProperties} getPropertybyID={this.getPropertybyID}/>} />
             <Route path='/saved' render={() => <SavedListings logoImage={SecondLogo} userData={this.userData} assignedProperties={this.state.assignedProperties} agents={this.state.agents} agentApplicationId={this.state.agentApplicationId} handleGeneric={this.handleGeneric} searchClick={this.searchClick} isLoggedIn={this.state.isLoggedIn} checkIfLoggedIn={this.checkIfLoggedIn} logOut={this.logOut} />} />
           </Switch>
         </BrowserRouter>

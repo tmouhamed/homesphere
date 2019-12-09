@@ -8,13 +8,12 @@ import './PropertiesPage.scss';
 import Listings from '../../components/Listings/Listings';
 import FilterSearch from '../../components/FilterSearch/FilterSearch';
 
-
 class PropertiesPage extends React.Component {
     render() {
         return (
             <>
                 {/* use a classnames npm package to use the same header but add more changes for this scpecific page*/}
-                <Header logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn}  isLoggedIn= {this.props.isLoggedIn} agents={this.props.agents} className={classnames("main__secondHeader", this.props.className)} logoImage={this.props.logoImage} />
+                <Header logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn}  isLoggedIn= {this.props.isLoggedIn} agents={this.props.agents} applicants={this.props.applicants} className={classnames("main__secondHeader", this.props.className)} logoImage={this.props.logoImage} />
                 <Burgermenu />
                 <Secondhero />
                 <main className="main">

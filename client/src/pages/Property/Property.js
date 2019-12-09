@@ -58,22 +58,21 @@ class Property extends React.Component {
                                 <h4 className="main__section-secondRow__left-secondTitle">UNIT AMENITIES</h4>
                                 <div className="main__section-secondRow__left-amenities">
                                     <div className="main__section-secondRow__left-amenities__amenity">
-                                    <img alt="checked" src={Cheched}/><span>Air Conditioned</span>
+                                        <img alt="checked" src={Cheched} /><span>Air Conditioned</span>
                                     </div>
                                     <div className="main__section-secondRow__left-amenities__amenity">
-                                    <img alt="checked" src={Fitness}/><span>Fitness Center</span>
+                                        <img alt="checked" src={Fitness} /><span>Fitness Center</span>
                                     </div>
                                     <div className="main__section-secondRow__left-amenities__amenity">
-                                    <img alt="checked" src={Parking}/><span>Garage</span>
+                                        <img alt="checked" src={Parking} /><span>Garage</span>
                                     </div>
                                     <div className="main__section-secondRow__left-amenities__amenity">
-                                    <img alt="checked" src={Washer}/><span>Washer Dryer</span>
+                                        <img alt="checked" src={Washer} /><span>Washer Dryer</span>
                                     </div>
                                     <div className="main__section-secondRow__left-amenities__amenity">
-                                    <img alt="checked" src={Dishwasher}/><span>Dishwasher</span>
+                                        <img alt="checked" src={Dishwasher} /><span>Dishwasher</span>
                                     </div>
                                 </div>
-                                <button className="main__section-secondRow__left-applyButton">Apply</button>
                             </div>
                             {thisAgent ?
                                 <div className="main__section-secondRow__right">
@@ -81,7 +80,7 @@ class Property extends React.Component {
                                     <h1 className="main__section-secondRow__right-personTitle">{`${thisAgent.firstName} ${thisAgent.lastName}`}</h1>
                                     <p className="main__section-secondRow__right-jobTitle">{`${thisAgent.jobTitle} - ${thisAgent.company}`}</p>
                                     <p>{thisAgent.phone}</p>
-                                    <ContactModel thisAgent={thisAgent}/>
+                                    <ContactModel thisAgent={thisAgent} />
                                 </div>
                                 : null}
                         </div>

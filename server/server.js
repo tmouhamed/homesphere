@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use('/agents', agentData);
 app.use('/properties', propertyData);
-app.use('/applications', applicantsData);
+app.use('/applicants', applicantsData);
 
 
 app.listen(8080, () => {

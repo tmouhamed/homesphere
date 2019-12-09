@@ -1,8 +1,8 @@
 import React from 'react';
 import Rodal from 'rodal';
+import 'rodal/lib/rodal.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import '../Header/Header.scss';
-import 'rodal/lib/rodal.css';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 

@@ -10,15 +10,13 @@ class Signup extends React.Component {
         checkbox: false
     }
 
-    postNewUser = (event, name) => {
+    postNewAgent = (event, name) => {
         const newUser = {
-            username: event.target.username.value,
             firstName: event.target.firstName.value,
             lastName: event.target.lastName.value,
             email: event.target.email.value,
             phone: event.target.phone.value,
-            password: event.target.password.value,
-            checkbox: this.state.checkbox,
+            password: event.target.password.value
         }
         return Axios.post(`${this.url}/agents/`, newUser)
             .then(response => {
@@ -27,9 +25,24 @@ class Signup extends React.Component {
             })
     }
 
+    postNewUser = (event, name) => {
+        const newUser = {
+            firstName: event.target.firstName.value,
+            lastName: event.target.lastName.value,
+            email: event.target.email.value,
+            phone: event.target.phone.value,
+            password: event.target.password.value
+        }
+        return Axios.post(`${this.url}/applicants/`, newUser)
+            .then(response => {
+                alert('You Have Successfully Signed Up!')
+                this.props.hide();
+            })
+    }
+
     submitHandler = (event) => {
         event.preventDefault();
-        this.postNewUser(event);
+        this.state.checkbox ? this.postNewAgent(event) : this.postNewUser(event);
         this.props.checkIfLoggedIn();
         this.props.hide();
     }
@@ -44,10 +57,6 @@ class Signup extends React.Component {
         return (
             <>
                 <Form onSubmit={this.submitHandler}>
-                    <Form.Group controlId="formBasicUserName">
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control type="name" name="username" />
-                    </Form.Group>
                     <Form.Group controlId="formBasicFirstName">
                         <Form.Label>First Name</Form.Label>
                         <Form.Control type="name" name="firstName" placeholder="John" required />
@@ -70,7 +79,7 @@ class Signup extends React.Component {
                         <Form.Control type="password" name="password" placeholder="Password" required />
                     </Form.Group>
                     <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" name="checkbox" label="Are you an agent ?"  onClick={this.checkboxValue}/>
+                        <Form.Check type="checkbox" name="checkbox" label="Are you an agent ?" onClick={this.checkboxValue} />
                     </Form.Group>
                     <Form.Group>
                         <Button variant="primary" type="submit"> Sign Me Up </Button></Form.Group>

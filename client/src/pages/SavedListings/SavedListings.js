@@ -7,27 +7,23 @@ import Listings from '../../components/Listings/Listings';
 import './SavedListings.scss';
 
 class SavedListings extends React.Component {
-    componentWillUpdate(){
+    componentWillUpdate() {
 
     }
     render() {
+        console.log(this.props.assignedProperties);
+
         return (
             <>
                 <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} isLoggedIn={this.props.isLoggedIn} agents={this.props.agents} />
                 <main className="main">
                     <Tabs>
                         <TabList>
-                            <Tab onClick={ () => {
-                                this.props.userData();
-                                }}>My Homes</Tab>
-                            <Tab>My Searches</Tab>
+                            <Tab onClick={() => this.props.userData()}>My Properties</Tab>
                         </TabList>
-
                         <TabPanel>
                             <Listings agentApplicationId={this.props.agentApplicationId} assignedProperties={this.props.assignedProperties} />
                         </TabPanel>
-
-                        <TabPanel>  </TabPanel>
                     </Tabs>
                 </main>
             </>
