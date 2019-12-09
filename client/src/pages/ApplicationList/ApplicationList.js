@@ -2,14 +2,10 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Header from '../../components/Header/Header';
 import classnames from 'classnames';
-import storageManger from '../../helpers/storageApi';
 import Listings from '../../components/Listings/Listings';
-import './SavedListings.scss';
 
-class SavedListings extends React.Component {
-    componentWillUpdate() {
-
-    }
+class ApplicationList extends React.Component {
+    
     render() {
         return (
             <>
@@ -28,4 +24,4 @@ class SavedListings extends React.Component {
         );
     }
 }
-export default SavedListings;
+export default ApplicationList;

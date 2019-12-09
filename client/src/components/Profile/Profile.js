@@ -19,7 +19,7 @@ class Profile extends React.Component {
                     <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic"> MY ACCOUNT </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item href="/saved">Saved</Dropdown.Item>
+                            <Dropdown.Item href="/applications">Application</Dropdown.Item>
                             <Dropdown.Item onClick={this.props.logOut}>Sign Out</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>}

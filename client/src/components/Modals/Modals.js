@@ -38,10 +38,10 @@ class Modals extends React.Component {
                             </TabList>
                             {/* SIGN IN  */}
                             <TabPanel>
-                                <Login hide={this.hide} agents={this.props.agents} checkIfLoggedIn={this.props.checkIfLoggedIn} />
+                                <Login hide={this.hide} agents={this.props.agents} checkIfLoggedIn={this.props.checkIfLoggedIn} applicants={this.props.applicants}/>
                             </TabPanel>
                             <TabPanel>
-                                <Signup show={this.show} agents={this.props.agents} hide={this.hide} checkIfLoggedIn={this.props.checkIfLoggedIn} />
+                                <Signup show={this.show} agents={this.props.agents} applicants={this.props.applicants} hide={this.hide} checkIfLoggedIn={this.props.checkIfLoggedIn} />
                             </TabPanel>
                         </Tabs>
                     </div>

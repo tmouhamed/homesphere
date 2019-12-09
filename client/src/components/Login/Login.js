@@ -17,20 +17,25 @@ class Login extends React.Component {
     login = (event) => {
         event.preventDefault();
         storageManager.setEmailInStore(this.state.email);
+
+        const { agents, applicants } = this.props;
         
-        const { agents } = this.props;
         if (this.state.email && !this.state.passwordError) {
-            console.log(agents);
-            
             const foundAgent = agents.find((agent) => {
                 return agent.email == this.state.email && agent.password == this.state.password
+            })
+            const foundApplicant = applicants.find((applicant) => {
+                return applicant.email == this.state.email && applicant.password == this.state.password
             })
 
             if (foundAgent) {
                 storageManager.setLoginStamp();
                 this.props.checkIfLoggedIn();
             }
-            else {
+            else if (foundApplicant) {
+                storageManager.setLoginStamp();
+                this.props.checkIfLoggedIn();
+            } else {
                 this.setState({
                     userError: true
                 })
@@ -57,6 +62,8 @@ class Login extends React.Component {
     }
 
     render() {
+        console.log(this.props);
+        
         return (
             <>
                 <Form onSubmit={this.login}>
