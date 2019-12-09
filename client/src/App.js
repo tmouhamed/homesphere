@@ -97,25 +97,42 @@ class App extends React.Component {
 
   userData = () => {
     const returnedEmail = storageManger.getEmailFromStore();
-    const { agents } = this.state;
-    let assignedProperties = [];
+    const { agents, applicants } = this.state;
+    let assignedagentProperties = [];
+    let applicantProperties = [];
 
     if (returnedEmail) {
-      const filteredEmail = agents.find(agent => { return agent.email === returnedEmail })
-      if (filteredEmail) {
-        for (let i = 0; i < filteredEmail.properties.length; i++) {
+      const filteredAgentEmail = agents.find(agent => { return agent.email === returnedEmail });
+      const filteredApplicantEmail = applicants.find(applicant => { return applicant.email === returnedEmail });
+      let propertiesAppliedFor = [];
+      if (filteredAgentEmail) {
+        for (let i = 0; i < filteredAgentEmail.properties.length; i++) {
           for (let j = 0; j < this.state.properties.length; j++) {
             if (this.state.properties[j].propertyId == this.state.agentApplicationId[i]) {
-              assignedProperties.push(this.state.properties[j]);
+              assignedagentProperties.push(this.state.properties[j]);
               break;
             }
           }
         }
+        this.setState({
+          agentApplicationId: filteredAgentEmail.properties,
+          assignedProperties: assignedagentProperties
+        })
       }
-      this.setState({
-        agentApplicationId: filteredEmail.properties,
-        assignedProperties: assignedProperties
-      })
+
+      else if (filteredApplicantEmail) {
+        for (let i = 0; i < filteredApplicantEmail.properties.length; i++) {
+          for (let j = 0; j < this.state.properties.length; j++) {
+            if (this.state.properties[j].propertyId == filteredApplicantEmail.properties[i]) {
+              propertiesAppliedFor.push(this.state.properties[j]);
+              break;
+            }
+          }
+        }
+        this.setState({
+          applicantProperties: propertiesAppliedFor
+        })
+      }
     }
   }
 
@@ -140,6 +157,7 @@ class App extends React.Component {
     this.getApplicants();
     this.checkIfLoggedIn();
   }
+
   render() {
     return (
       <>
@@ -147,9 +165,9 @@ class App extends React.Component {
           <Switch>
             <Route path='/' exact render={() => <Homepage logoImage={Logo} agents={this.state.agents} />} />
             <Route path='/properties' exact render={() => <PropertiesPage getPropertybyID={this.getPropertybyID} logoImage={SecondLogo} applicants={this.state.applicants} agents={this.state.agents} sendingProperties={this.sendingProperties} handleGeneric={this.handleGeneric} filterProperty={this.filterProperty} isLoggedIn={this.state.isLoggedIn} checkIfLoggedIn={this.checkIfLoggedIn} logOut={this.logOut} />} />
-            <Route path='/properties/:id' render={(props) => <Property {...props} logoImage={SecondLogo} agents={this.state.agents} getPropertybyID={this.getPropertybyID} propertybyId={this.state.oneProperty} sendingProperties={this.sendingProperties} getPropertybyID={this.getPropertybyID}/>} />
-            <Route path='/saved' render={() => <SavedListings logoImage={SecondLogo} userData={this.userData} assignedProperties={this.state.assignedProperties} agents={this.state.agents} applicants={this.state.applicants} agentApplicationId={this.state.agentApplicationId} handleGeneric={this.handleGeneric} searchClick={this.searchClick} isLoggedIn={this.state.isLoggedIn} checkIfLoggedIn={this.checkIfLoggedIn} logOut={this.logOut} />} /> 
-            <Route path='/applications' render={() => <ApplicationList logoImage={SecondLogo} userData={this.userData} assignedProperties={this.state.assignedProperties} agents={this.state.agents} applicants={this.state.applicants} agentApplicationId={this.state.agentApplicationId} handleGeneric={this.handleGeneric} searchClick={this.searchClick} isLoggedIn={this.state.isLoggedIn} checkIfLoggedIn={this.checkIfLoggedIn} logOut={this.logOut} />} />
+            <Route path='/properties/:id' render={(props) => <Property {...props} logoImage={SecondLogo} agents={this.state.agents} getPropertybyID={this.getPropertybyID} propertybyId={this.state.oneProperty} sendingProperties={this.sendingProperties} getPropertybyID={this.getPropertybyID} />} />
+            <Route path='/saved' render={() => <SavedListings logoImage={SecondLogo} userData={this.userData} assignedProperties={this.state.assignedProperties} agents={this.state.agents} applicants={this.state.applicants} agentApplicationId={this.state.agentApplicationId} handleGeneric={this.handleGeneric} isLoggedIn={this.state.isLoggedIn} checkIfLoggedIn={this.checkIfLoggedIn} logOut={this.logOut} />} />
+            <Route path='/applications' render={() => <ApplicationList logoImage={SecondLogo} userData={this.userData} applicantProperties={this.state.applicantProperties} applicants={this.state.applicants} agents={this.state.agents} handleGeneric={this.handleGeneric} isLoggedIn={this.state.isLoggedIn} checkIfLoggedIn={this.checkIfLoggedIn} logOut={this.logOut} />} />
           </Switch>
         </BrowserRouter>
       </>

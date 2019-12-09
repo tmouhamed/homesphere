@@ -4,6 +4,7 @@ import storageManager from '../../helpers/storageApi';
 class Profile extends React.Component {
     render() {
         const checkEmail = storageManager.getEmailFromStore();
+        
         const agentDropdown = this.props.agents.find(element => element.email === checkEmail);
         return (
             <>

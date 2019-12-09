@@ -7,16 +7,18 @@ import Listings from '../../components/Listings/Listings';
 class ApplicationList extends React.Component {
     
     render() {
+        console.log(this.props);
+        
         return (
             <>
-                <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} isLoggedIn={this.props.isLoggedIn} agents={this.props.agents} />
+                <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} isLoggedIn={this.props.isLoggedIn} applicants={this.props.applicants} agents={this.props.agents} />
                 <main className="main">
                     <Tabs>
                         <TabList>
                             <Tab onClick={() => this.props.userData()}>My Properties</Tab>
                         </TabList>
                         <TabPanel>
-                            <Listings agentApplicationId={this.props.agentApplicationId} assignedProperties={this.props.assignedProperties} applicants={this.props.applicants}/>
+                            <Listings agentApplicationId={this.props.agentApplicationId} applicantProperties={this.props.applicantProperties} applicants={this.props.applicants}/>
                         </TabPanel>
                     </Tabs>
                 </main>

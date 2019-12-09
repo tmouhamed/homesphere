@@ -13,8 +13,10 @@ class Listings extends React.Component {
         //depends on the whole properties are sent or the filtered ones
         if (this.props.sendingProperties) {
             properties = this.props.sendingProperties();
-        } else {
+        } else if (this.props.assignedProperties) {
             properties = this.props.assignedProperties;
+        } else if (this.props.applicantProperties){
+            properties = this.props.applicantProperties;
         }
         return (
 
