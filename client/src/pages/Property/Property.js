@@ -4,9 +4,6 @@ import Header from '../../components/Header/Header';
 import { Carousel } from '3d-react-carousal';
 import '../SavedListings/SavedListings.scss';
 import './Property.scss';
-import Image1 from '../../assets/images/house4.jpg';
-import Image2 from '../../assets/images/house4-1.jpg';
-import Image3 from '../../assets/images/house4-2.jpg';
 import Bed from '../../assets/icons/bed.svg';
 import Bath from '../../assets/icons/bathtub.svg';
 import Cheched from '../../assets/icons/checked.svg';
@@ -15,6 +12,7 @@ import Parking from '../../assets/icons/parking.svg';
 import Washer from '../../assets/icons/washer.svg';
 import Dishwasher from '../../assets/icons/dishwasher.svg';
 import ContactModel from '../../components/ContactModal/ContactModal';
+import Footer from '../../components/Footer/Footer';
 
 
 class Property extends React.Component {
@@ -92,6 +90,7 @@ class Property extends React.Component {
                         </div>
                     </section>
                 </main>
+                <Footer />
             </>
         );
     }

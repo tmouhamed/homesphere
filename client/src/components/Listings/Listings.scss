@@ -18,6 +18,13 @@
     overflow: hidden;
     box-shadow: 2px 2px 15px rgba(20 ,27 ,65 ,0.55);
 
+    @include desktop-size {
+    width: 28%;
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+
     &__image {
       height: 180px;
     }
@@ -44,7 +51,7 @@
     &__title {
       margin-left: 15px;
       margin: 30px 0 40px 15px;
-      color: #3c3956;
+      color: #21277a;
 
       &:hover {
         color: grey

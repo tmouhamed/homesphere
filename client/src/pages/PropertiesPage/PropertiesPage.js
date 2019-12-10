@@ -7,6 +7,7 @@ import classnames from 'classnames';
 import './PropertiesPage.scss';
 import Listings from '../../components/Listings/Listings';
 import FilterSearch from '../../components/FilterSearch/FilterSearch';
+import Footer from '../../components/Footer/Footer';
 
 class PropertiesPage extends React.Component {
     render() {
@@ -22,6 +23,7 @@ class PropertiesPage extends React.Component {
                     <FilterSearch handleGeneric={this.props.handleGeneric} searchClick={this.props.searchClick} filterProperty={this.props.filterProperty} />
                     <Listings sendingProperties={this.props.sendingProperties} getPropertybyID={this.props.getPropertybyID} />
                 </main>
+                <Footer />
             </>
         );
     }

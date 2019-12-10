@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import storageManger from '../../helpers/storageApi';
 import Listings from '../../components/Listings/Listings';
 import './SavedListings.scss';
+import Footer from '../../components/Footer/Footer';
 
 class SavedListings extends React.Component {
     // componentDidMount(){
@@ -25,6 +26,7 @@ class SavedListings extends React.Component {
                         </TabPanel>
                     </Tabs>
                 </main>
+                <Footer />
             </>
         );
     }

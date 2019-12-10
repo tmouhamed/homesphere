@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Header from '../../components/Header/Header';
 import classnames from 'classnames';
 import Listings from '../../components/Listings/Listings';
+import Footer from '../../components/Footer/Footer';
 
 class ApplicationList extends React.Component {
     
@@ -20,6 +21,7 @@ class ApplicationList extends React.Component {
                         </TabPanel>
                     </Tabs>
                 </main>
+                <Footer />
             </>
         );
     }

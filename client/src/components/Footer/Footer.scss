@@ -1,0 +1,21 @@
+@import "../../styles/base.scss";
+.footer {
+  text-align: center;
+  padding: 48px 0 25px 0;
+  background-color: #f8faff;
+  &__list {
+    @include tablet-size {
+      padding: 20px 0;
+    }
+    &-icon {
+      margin: 15px;
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+      @include tablet-size {
+        margin: 0;
+        margin-left: 32px;
+      }
+    }
+  }
+}
