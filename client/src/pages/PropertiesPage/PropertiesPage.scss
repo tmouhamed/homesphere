@@ -5,7 +5,21 @@
 .main__secondHeader .main__header-nav__list-link {
   color: #4951e1;
 }
-.main__secondHeader .main__header-nav__list-button {
+.main__secondHeader .main__header-nav__list-button .btn-success {
   color: #4951e1;
   border-color: #4951e1;
+}
+#propertyHeader .btn-success {
+  border: 1px solid #4951e1 !important;
+  background: transparent !important;
+  border-radius: 3px;
+  padding: 10px 24px;
+  color: #4951e1;
+  @include menu-tablet-style;
+  line-height: 18px;
+
+  &:focus {
+    border: 1px solid #4951e1 !important;
+    box-shadow: none !important;
+  }
 }

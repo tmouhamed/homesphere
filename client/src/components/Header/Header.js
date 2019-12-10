@@ -13,7 +13,8 @@ class Header extends React.Component {
                     <ul className="main__header-nav__list">
                         <li className="main__header-nav__list-item"><Link to="/properties" className="main__header-nav__list-link" href="/">Buy</Link></li>
                         <li className="main__header-nav__list-item"><Link to="/properties" className="main__header-nav__list-link" href="/">Rent</Link></li>
-                        { this.props.isLoggedIn ? <Profile logOut={this.props.logOut} userData={this.props.userData} agents={this.props.agents} applicants={this.props.applicants}/> : <Modals agents={this.props.agents} checkIfLoggedIn={this.props.checkIfLoggedIn} applicants={this.props.applicants}/> }
+                        
+                        { this.props.isLoggedIn ? <Profile logOut={this.props.logOut} userData={this.props.userData} agents={this.props.agents} applicants={this.props.applicants}/> : <Modals agents={this.props.agents} applicants={this.props.applicants} checkIfLoggedIn={this.props.checkIfLoggedIn}/> }
                     </ul>
                 </nav>
             </header>

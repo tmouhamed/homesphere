@@ -13,12 +13,14 @@ class PropertiesPage extends React.Component {
         return (
             <>
                 {/* use a classnames npm package to use the same header but add more changes for this scpecific page*/}
-                <Header logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn}  isLoggedIn= {this.props.isLoggedIn} agents={this.props.agents} applicants={this.props.applicants} className={classnames("main__secondHeader", this.props.className)} logoImage={this.props.logoImage} />
+                <div id="propertyHeader">
+                    <Header logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} isLoggedIn={this.props.isLoggedIn} agents={this.props.agents} applicants={this.props.applicants} className={classnames("main__secondHeader", this.props.className)} logoImage={this.props.logoImage} />
+                </div>
                 <Burgermenu />
                 <Secondhero />
                 <main className="main">
-                    <FilterSearch handleGeneric={this.props.handleGeneric} searchClick={this.props.searchClick} filterProperty={this.props.filterProperty}/>
-                    <Listings sendingProperties={this.props.sendingProperties} getPropertybyID={this.props.getPropertybyID}/>
+                    <FilterSearch handleGeneric={this.props.handleGeneric} searchClick={this.props.searchClick} filterProperty={this.props.filterProperty} />
+                    <Listings sendingProperties={this.props.sendingProperties} getPropertybyID={this.props.getPropertybyID} />
                 </main>
             </>
         );

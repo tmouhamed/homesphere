@@ -9,7 +9,7 @@ class ApplicationList extends React.Component {
     render() {
         return (
             <>
-                <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} isLoggedIn={this.props.isLoggedIn} applicants={this.props.applicants} agents={this.props.agents} />
+            <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} applicants={this.props.applicants} agents={this.props.agents} />
                 <main className="main">
                     <Tabs>
                         <TabList>

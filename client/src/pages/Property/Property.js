@@ -18,21 +18,26 @@ import ContactModel from '../../components/ContactModal/ContactModal';
 
 
 class Property extends React.Component {
+
     componentDidMount() {
         this.props.getPropertybyID(this.props.match.params.id);
     }
     render() {
-        const { address, baths, beds, category, city, price, propertyType, zipCode, agentId , image} = this.props.propertybyId;
-        const thisAgent = this.props.agents.find((agent) => { return agent.agentId == agentId })
-        
-        let slides = [
-            <img src={Image1} alt="1" />,
-            <img src={Image2} alt="2" />,
-            <img src={Image3} alt="3" />,
-        ];
+        const { address, baths, beds, category, city, price, zipCode, agentId, image } = this.props.propertybyId;
+        const thisAgent = this.props.agents.find((agent) => { return agent.agentId == agentId });
+        let slides = []
+        if (image) {
+            slides = [
+                <img src={image[0]} />,
+                <img src={image[1]} />,
+                <img src={image[2]} />
+            ]
+        }
         return (
             <>
-                <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} isLoggedIn={this.props.isLoggedIn} agents={this.props.agents} />
+                <div id="propertyHeader">
+                    <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} isLoggedIn={this.props.isLoggedIn} agents={this.props.agents} applicants={this.props.applicants} />
+                </div>
                 <main className="main">
                     <Carousel slides={slides} />
                     <section className="main__section">

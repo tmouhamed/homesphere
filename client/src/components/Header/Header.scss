@@ -59,6 +59,11 @@
       &-link {
         text-decoration: none;
         color: $white-text-color;
+        &:hover {
+
+        text-decoration: none;
+        color: $white-text-color;
+        }
       }
 
       &-button {
@@ -77,4 +82,14 @@
       }
     }
   }
+}
+
+.btn-success {
+  border: 1px solid white !important;
+  background: transparent !important;
+  border-radius: 3px;
+  padding: 9px 24px !important;
+  color: white;
+  @include menu-tablet-style;
+  line-height: 18px;
 }
