@@ -11,7 +11,7 @@ class ApplicationList extends React.Component {
         return (
             <>
                 <div id="propertyHeader">
-                    <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} applicants={this.props.applicants} agents={this.props.agents} />
+                    <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} isLoggedIn={this.props.isLoggedIn} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} applicants={this.props.applicants} agents={this.props.agents} />
                 </div>
                 <main className="main">
                     <Tabs>

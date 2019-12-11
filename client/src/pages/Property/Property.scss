@@ -113,12 +113,27 @@
       &-personTitle {
         @include header2-tablet-style;
       }
+      &-personTitle2 {
+        @include header2-tablet-style;
+        margin-top: 25px ;
+        text-align: left;
+      }
 
       &-jobTitle {
         @include pargraph-tablet-style;
         margin: 15px 0;
         font-size: 18px;
         color: #c6cbd3;
+      }
+
+      &-jobTitle2 {
+        @include pargraph-mobile-style;
+        margin: 10px 0 20px 0;
+        padding-bottom: 25px;
+        font-size: 18px;
+        color: #c6cbd3;
+        text-align: left;
+        border-bottom: 1px solid #e1e5f2;
       }
 
       &-fromTitle {

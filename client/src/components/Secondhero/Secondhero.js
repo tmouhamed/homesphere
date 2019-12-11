@@ -1,14 +1,13 @@
 import React from 'react';
 import './Secondhero.scss';
 import Particles from 'react-particles-js';
-import Form from '../Form/Form';
 
 class Secondhero extends React.Component {
     render() {
         return (
             <>
                 <section className="main__secondhero">
-                    {/* <Particles
+                    <Particles
                         params={{
                             "particles": {
                                 "number": {
@@ -42,10 +41,9 @@ class Secondhero extends React.Component {
                                     }
                                 }
                             }
-                        }} /> */}
+                        }} />
                 </section>
                 <div id="particles-js"></div>
-                {/* <Form /> */}
             </>
         );
     }

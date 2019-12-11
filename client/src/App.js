@@ -86,25 +86,6 @@ class App extends React.Component {
   }
 
   //filter from the all properties
-  // filterProperty = (e, name) => {
-  //   e ? e.preventDefault() : console.log(e)
-
-  //   const filtered = this.state.properties.filter((item) => {
-  //     return (item.category == this.state.category && item.propertyType == this.state.propertyType && item.beds == this.state.bed && item.baths == this.state.bath)
-  //       || (item.category == this.state.category && item.beds == this.state.bed && item.baths == this.state.bath)
-  //       || (item.category == this.state.category && item.beds == this.state.bed)
-  //       || (item.beds == this.state.bed && item.category == this.state.category)
-  //       || (item.beds == this.state.bed)
-  //       || (item.baths == this.state.bath)
-  //       || (item.category == this.state.category)
-  //       || (item.propertyType == this.state.propertyType)
-  //   })
-  //   this.setState({
-  //     filteredProperties: filtered
-  //   })
-  // }
-
-  //filter from the all properties
   filterProperty = (e, name) => {
     e ? e.preventDefault() : console.log(e)
 
@@ -226,7 +207,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.category)
     return (
       <>
         <BrowserRouter>

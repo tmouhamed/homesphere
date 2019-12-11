@@ -46,10 +46,17 @@
     &__searchbar {
       @include input-style;
       border-radius: 5px;
-      background-image: url("../../assets/icons/searchIcon.svg");
+      background-color: white;
       background-size: 18px;
       background-position: 95% 50%;
       background-repeat: no-repeat;
+
+      &:hover {
+        border: none;
+      }
+      &:focus {
+        border: none;
+      }
     }
 
     &__price-selector {

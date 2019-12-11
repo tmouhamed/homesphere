@@ -1,37 +1,53 @@
-@import './variables.scss';
-@import './mixins.scss';
+@import "./variables.scss";
+@import "./mixins.scss";
 
 .App {
-    @include flex-display-column;
+  @include flex-display-column;
 }
 .main {
-    margin: $mobile-margin;
+  margin: $mobile-margin;
 
-    @include tablet-size {
-      margin: $tablet-margin;
-    }
-    @include desktop-size {
-      margin: $desktop-margin;
-    }
+  @include tablet-size {
+    margin: $tablet-margin;
+  }
+  @include desktop-size {
+    margin: $desktop-margin;
+  }
 }
-html, body {
-    box-sizing: border-box;
-    background-color: white !important;
-    color: #3c3956;
-    margin: 0;
-    @include pargraph-mobile-style;
+html,
+body {
+  box-sizing: border-box;
+  background-color: white !important;
+  color: #3c3956;
+  margin: 0;
+  @include pargraph-mobile-style;
 
-    @include tablet-size {
-      @include pargraph-tablet-style;
-    }
+  @include tablet-size {
+    @include pargraph-tablet-style;
+  }
 
-    & a:hover{
-      text-decoration: none;
-    }
+  & a:hover {
+    text-decoration: none;
+  }
 }
-  *, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 .react-3d-carousel .slider-container .slider-right {
   left: 85% !important;
+}
+.form-group {
+  text-align: left;
+}
+.special-center {
+  text-align: center;
+}
+.form-label {
+  color: #3063ae;
+}
+.cityMargin {
+  @include flex-display-row;
+  justify-content: flex-end;
 }
