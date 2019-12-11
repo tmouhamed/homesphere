@@ -43,7 +43,7 @@ class Applicants extends React.Component {
                             </Card.Header>
                             {specificApplicant.map((item) => {
                                 return (
-                                    <Accordion.Collapse eventKey="0">
+                                    <Accordion.Collapse eventKey="0" >
                                         <Card.Body>{`${item.firstName} / ${item.email}`}</Card.Body>
                                     </Accordion.Collapse>
                                 )

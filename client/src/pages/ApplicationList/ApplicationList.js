@@ -6,18 +6,20 @@ import Listings from '../../components/Listings/Listings';
 import Footer from '../../components/Footer/Footer';
 
 class ApplicationList extends React.Component {
-    
+
     render() {
         return (
             <>
-            <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} applicants={this.props.applicants} agents={this.props.agents} />
+                <div id="propertyHeader">
+                    <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} applicants={this.props.applicants} agents={this.props.agents} />
+                </div>
                 <main className="main">
                     <Tabs>
                         <TabList>
-                            <Tab onClick={() => this.props.userData()}>My Properties</Tab>
+                            <Tab >My Properties</Tab>
                         </TabList>
                         <TabPanel>
-                            <Listings agentApplicationId={this.props.agentApplicationId} applicantProperties={this.props.applicantProperties} applicants={this.props.applicants}/>
+                            <Listings agentApplicationId={this.props.agentApplicationId} applicantProperties={this.props.applicantProperties} applicants={this.props.applicants} />
                         </TabPanel>
                     </Tabs>
                 </main>
