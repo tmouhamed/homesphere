@@ -9,7 +9,6 @@ import storageManger from './helpers/storageApi';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Property from './pages/Property/Property';
 import SavedListings from './pages/SavedListings/SavedListings';
-import { element } from 'prop-types';
 import ApplicationList from './pages/ApplicationList/ApplicationList';
 
 
@@ -29,6 +28,8 @@ class App extends React.Component {
       bed: '',
       bath: '',
       price: [],
+      minPrice: '',
+      maxPrice: '',
       isLoggedIn: false,
       oneProperty: []
     }
@@ -81,10 +82,17 @@ class App extends React.Component {
 
   //filter from the all properties
   filterProperty = (e, name) => {
-    e.preventDefault();
+    e ? e.preventDefault(): console.log(e)
 
     const filtered = this.state.properties.filter((item) => {
-      return (item.category == this.state.category && item.propertyType == this.state.propertyType && item.beds == this.state.bed && item.baths == this.state.bath) || (item.category == this.state.category) || (item.propertyType == this.state.propertyType) || (item.category == this.state.category) || (item.category == this.state.category && item.beds == this.state.bed) || (item.category == this.state.category && item.beds == this.state.bed && item.baths == this.state.bath)
+      return (item.category == this.state.category && item.propertyType == this.state.propertyType && item.beds == this.state.bed && item.baths == this.state.bath)
+      || (item.category == this.state.category && item.beds == this.state.bed && item.baths == this.state.bath)  
+      || (item.category == this.state.category && item.beds == this.state.bed)  
+      || (item.beds == this.state.bed && item.category == this.state.category)
+      || (item.beds == this.state.bed)
+      || (item.baths == this.state.bath)
+      || (item.category == this.state.category)
+      || (item.propertyType == this.state.propertyType) 
     })
     this.setState({
       filteredProperties: filtered
@@ -168,7 +176,7 @@ class App extends React.Component {
       <>
         <BrowserRouter>
           <Switch>
-            <Route path='/' exact render={() => <Homepage logOut={this.logOut} checkIfLoggedIn={this.checkIfLoggedIn} isLoggedIn={this.state.isLoggedIn} applicants={this.state.applicants} agents={this.state.agents} logoImage={Logo}/>} />
+            <Route path='/' exact render={() => <Homepage logOut={this.logOut} checkIfLoggedIn={this.checkIfLoggedIn} isLoggedIn={this.state.isLoggedIn} applicants={this.state.applicants} agents={this.state.agents} logoImage={Logo} handleGeneric={this.handleGeneric} filterProperty={this.filterProperty}/>} />
             <Route path='/properties' exact render={() => <PropertiesPage getPropertybyID={this.getPropertybyID} logoImage={SecondLogo} applicants={this.state.applicants} agents={this.state.agents} sendingProperties={this.sendingProperties} handleGeneric={this.handleGeneric} filterProperty={this.filterProperty} isLoggedIn={this.state.isLoggedIn} checkIfLoggedIn={this.checkIfLoggedIn} logOut={this.logOut} />} />
             <Route path='/properties/:id' render={(props) => <Property {...props} logoImage={SecondLogo} logOut={this.logOut} checkIfLoggedIn={this.checkIfLoggedIn} isLoggedIn={this.state.isLoggedIn} agents={this.state.agents} applicants={this.state.applicants} getPropertybyID={this.getPropertybyID} propertybyId={this.state.oneProperty} sendingProperties={this.sendingProperties} getPropertybyID={this.getPropertybyID} />} />
             <Route path='/saved' render={() => <SavedListings logoImage={SecondLogo} userData={this.userData} assignedProperties={this.state.assignedProperties} agents={this.state.agents} applicants={this.state.applicants} agentApplicationId={this.state.agentApplicationId} handleGeneric={this.handleGeneric} isLoggedIn={this.state.isLoggedIn} checkIfLoggedIn={this.checkIfLoggedIn} logOut={this.logOut} />} />

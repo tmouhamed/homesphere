@@ -22,10 +22,10 @@ class Login extends React.Component {
         
         if (this.state.email && !this.state.passwordError) {
             const foundAgent = agents.find((agent) => {
-                return agent.email == this.state.email && agent.password == this.state.password
+                return agent.email === this.state.email && agent.password === this.state.password
             })
             const foundApplicant = applicants.find((applicant) => {
-                return applicant.email == this.state.email && applicant.password == this.state.password
+                return applicant.email === this.state.email && applicant.password === this.state.password
             })
 
             if (foundAgent) {
@@ -45,7 +45,7 @@ class Login extends React.Component {
 
     updateInput = event => {
         //Validation for password
-        if (event.target.name == 'password') {
+        if (event.target.name === 'password') {
             if (event.target.value.length < 8) {
                 this.setState({
                     passwordError: true

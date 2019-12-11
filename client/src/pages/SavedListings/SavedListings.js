@@ -2,16 +2,11 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Header from '../../components/Header/Header';
 import classnames from 'classnames';
-import storageManger from '../../helpers/storageApi';
 import Listings from '../../components/Listings/Listings';
 import './SavedListings.scss';
 import Footer from '../../components/Footer/Footer';
 
 class SavedListings extends React.Component {
-    // componentDidMount(){
-
-    //     this.props.userData();
-    // }
     render() {
         return (
             <>

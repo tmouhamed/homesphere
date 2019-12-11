@@ -2,8 +2,11 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import './Form.scss';
-
+import { Link } from 'react-router-dom';
 class Form extends React.Component {
+  handleSubmit = () => {
+    this.props.filterProperty()
+  }
   render() {
     return (
       <form className="main__form" onSubmit={this.handleSubmit}>
@@ -22,15 +25,15 @@ class Form extends React.Component {
                 <p className="main__form-fieldset__titles-description">Toronto apartments, condos, penthouses, brownstones and houses for rent.</p>
               </div>
               <div className="main__form-fieldset__searchform">
-                <div>
-                  <input className="main__form-fieldset__searchbar" name="name" type="text" placeholder="Neighborhood" />
-                </div>
+                <select className="main__form-fieldset__searchbar" name="propertyType" onChange={this.props.handleGeneric}>
+                  <option data-display="Property Type">Property Type</option>
+                  <option value="House">House</option>
+                  <option value="Townhouse">Townhouse</option>
+                  <option value="Condo">Condo</option>
+                </select>
                 <div className="main__form-fieldset__price-selector">
-                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Minimum" />
-                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Maximum" />
-                </div>
-                <div>
-                  <input className="main__form-fieldset__beds-input" name="name" type="text" />
+                  <input className="main__form-fieldset__price-selector-input" name="minPrice" type="text" placeholder="$ Minimum" onChange={this.props.handleGeneric} />
+                  <input className="main__form-fieldset__price-selector-input" name="maxPrice" type="text" placeholder="$ Maximum" onChange={this.props.handleGeneric} />
                 </div>
                 <div>
                   <button className="main__form-fieldset__submit-button">Submit</button>
@@ -46,20 +49,39 @@ class Form extends React.Component {
               </div>
               <div className="main__form-fieldset__searchform">
                 <div>
-                  <input className="main__form-fieldset__searchbar" name="name" type="text" placeholder="Neighborhood" />
+                  <select className="main__form-fieldset__searchbar" name="propertyType" onChange={this.props.handleGeneric}>
+                    <option data-display="Property Type">Property Type</option>
+                    <option value="House">House</option>
+                    <option value="Townhouse">Townhouse</option>
+                    <option value="Condo">Condo</option>
+                  </select>
+                </div>
+                <div>
+                  <select name="category" className="search__form-select" onChange={this.props.handleGeneric}>
+                    <option data-display="category">Category</option>
+                    <option value="For Rent">Rent</option>
+                    <option value="For Sale">Buy</option>
+                  </select>
                 </div>
                 <div className="main__form-fieldset__price-selector">
-                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Minimum" />
-                  <input className="main__form-fieldset__price-selector-input" name="name" type="text" placeholder="$ Maximum" />
+                  <input className="main__form-fieldset__price-selector-input" name="minPrice" type="text" placeholder="$ Minimum" onChange={this.props.handleGeneric} />
+                  <input className="main__form-fieldset__price-selector-input" name="maxPrice" type="text" placeholder="$ Maximum" onChange={this.props.handleGeneric} />
                 </div>
                 <div>
-                  <input className="main__form-fieldset__beds-input" name="name" type="text"/>
-                </div>
-                <div>
-                  <button className="main__form-fieldset__submit-button">Submit</button>
+
+                  <Link
+                    to={{
+                      pathname: "/properties",
+                      search: "?sort=name",
+                      hash: "#the-hash",
+                      state: { fromDashboard: true }
+                    }}>
+                    <button className="main__form-fieldset__submit-button" type="submit">Submit</button>
+                  </Link>
                 </div>
               </div>
-            </TabPanel></Tabs>
+            </TabPanel>
+          </Tabs>
         </fieldset>
       </form>
     )

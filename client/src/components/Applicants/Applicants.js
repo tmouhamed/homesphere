@@ -3,7 +3,6 @@ import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
 import Accordion from 'react-bootstrap/Accordion';
 import { Card, Button } from 'react-bootstrap';
-import { element } from 'prop-types';
 
 class Applicants extends React.Component {
     constructor(props) {

@@ -11,12 +11,11 @@ class FilterSearch extends React.Component {
                         <option value="House">House</option>
                         <option value="Townhouse">Townhouse</option>
                         <option value="Condo">Condo</option>
-
                     </select>
                     <select name="category" className="search__form-select" onChange={this.props.handleGeneric}>
                         <option data-display="category">Category</option>
                         <option value="For Rent">Rent</option>
-                        <option value="For Sale">Sell</option>
+                        <option value="For Sale">Buy</option>
                     </select>
                     <select name="bed" className="search__form-select" onChange={this.props.handleGeneric}>
                         <option data-display="Bedrooms">Bedrooms</option>

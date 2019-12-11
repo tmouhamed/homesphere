@@ -6,7 +6,7 @@ class Homepage extends React.Component {
     render() {
         return (
             <>
-                <Hero logoImage={this.props.logoImage} logOut={this.props.logOut} isLoggedIn={this.props.isLoggedIn} checkIfLoggedIn={this.props.checkIfLoggedIn} applicants={this.props.applicants} agents={this.props.agents}></Hero>
+                <Hero logoImage={this.props.logoImage} logOut={this.props.logOut} isLoggedIn={this.props.isLoggedIn} checkIfLoggedIn={this.props.checkIfLoggedIn} applicants={this.props.applicants} agents={this.props.agents} handleGeneric={this.props.handleGeneric} filterProperty={this.props.filterProperty}></Hero>
                 <Burgermenu />
                 <main className="main">
                 </main>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom'
 import Burgermenu from '../../components/Burgermenu/Burgermenu';
 import Secondhero from '../../components/Secondhero/Secondhero';
 import Header from '../../components/Header/Header';
@@ -10,6 +9,9 @@ import FilterSearch from '../../components/FilterSearch/FilterSearch';
 import Footer from '../../components/Footer/Footer';
 
 class PropertiesPage extends React.Component {
+    componentDidMount() {
+        this.props.filterProperty()
+    }
     render() {
         return (
             <>

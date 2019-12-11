@@ -13,6 +13,7 @@ import Washer from '../../assets/icons/washer.svg';
 import Dishwasher from '../../assets/icons/dishwasher.svg';
 import ContactModel from '../../components/ContactModal/ContactModal';
 import Footer from '../../components/Footer/Footer';
+import ApplyModel from '../../components/ApplyModal/ApplyModal';
 
 
 class Property extends React.Component {
@@ -21,14 +22,14 @@ class Property extends React.Component {
         this.props.getPropertybyID(this.props.match.params.id);
     }
     render() {
-        const { address, baths, beds, category, city, price, zipCode, agentId, image } = this.props.propertybyId;
-        const thisAgent = this.props.agents.find((agent) => { return agent.agentId == agentId });
+        const { address, baths, beds, category, city, price, agentId, image } = this.props.propertybyId;
+        const thisAgent = this.props.agents.find((agent) => { return agent.agentId === agentId });
         let slides = []
         if (image) {
             slides = [
-                <img src={image[0]} />,
-                <img src={image[1]} />,
-                <img src={image[2]} />
+                <img src={image[0]} alt="house"/>,
+                <img src={image[1]} alt="house"/>,
+                <img src={image[2]} alt="house"/>
             ]
         }
         return (
@@ -84,7 +85,9 @@ class Property extends React.Component {
                                     <h1 className="main__section-secondRow__right-personTitle">{`${thisAgent.firstName} ${thisAgent.lastName}`}</h1>
                                     <p className="main__section-secondRow__right-jobTitle">{`${thisAgent.jobTitle} - ${thisAgent.company}`}</p>
                                     <p>{thisAgent.phone}</p>
-                                    <ContactModel thisAgent={thisAgent} />
+                                    <div className="main__section-secondRow__right-buttons">
+                                        <ContactModel thisAgent={thisAgent} /><ApplyModel />
+                                    </div>
                                 </div>
                                 : null}
                         </div>

@@ -8,7 +8,7 @@ class Header extends React.Component {
     render() {
         return (
             <header className={`main__header ${this.props.className}`}>
-                <Link to="/"><img className="main__header-logo" alt="logo" src={this.props.logoImage} /></Link>
+                <Link to="#"><img className="main__header-logo" alt="logo" src={this.props.logoImage} /></Link>
                 <nav className="main__header-nav">
                     <ul className="main__header-nav__list">
                         <li className="main__header-nav__list-item"><Link to="/properties" className="main__header-nav__list-link" href="/">Buy</Link></li>
