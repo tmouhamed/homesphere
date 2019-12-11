@@ -13,7 +13,7 @@ class SavedListings extends React.Component {
                 <div id="propertyHeader">
                     <Header logoImage={this.props.logoImage} className={classnames("main__secondHeader main__thirdHeader", this.props.className)} logOut={this.props.logOut} checkIfLoggedIn={this.props.checkIfLoggedIn} isLoggedIn={this.props.isLoggedIn} agents={this.props.agents} />
                 </div>
-                <main className="main">
+                <main className="main" id="applicantionList">
                     <Tabs>
                         <TabList>
                             <Tab >My Properties</Tab>

@@ -1,12 +1,8 @@
 import React from 'react';
 import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
-import Accordion from 'react-bootstrap/Accordion';
-// import { Card, Button } from 'react-bootstrap';
-// import Carousel from 'react-bootstrap/Carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
-import Image from '../../assets/logo/logo.png'
+import Collapsible from 'react-collapsible';
+import './Applicants.scss';
 
 class Applicants extends React.Component {
     constructor(props) {
@@ -26,7 +22,9 @@ class Applicants extends React.Component {
         const { applicants, properties, thisApplicants } = this.props
         let specificApplicant = [];
         const customStyles = {
-            height: '75%',
+            height: '50%',
+            overflow: 'scroll',
+            padding: '30px 25px'
         };
         thisApplicants.forEach((applicant) => {
             for (let i = 0; i < applicants.length; i++) {
@@ -36,43 +34,22 @@ class Applicants extends React.Component {
 
             }
         })
-        console.log(this.props.thisApplicants);
-        
         return (
             <>
                 <button className="main__listings-card__category2" onClick={this.show.bind(this)}>{`${properties.applicants.length} Applications`}</button>
                 <Rodal customStyles={customStyles} visible={this.state.visible} onClose={this.hide.bind(this)}>
-                    {/* <Accordion>
-                        <Card>
-                            <Card.Header>
-                                <Accordion.Toggle as={Button} variant="link" eventKey="0">{properties.address}</Accordion.Toggle>
-                            </Card.Header>
-                            {specificApplicant.map((item) => {
-                                return (
-                                    <Accordion.Collapse eventKey="0" >
-                                        <Card.Body>{`${item.firstName} / ${item.email}`}</Card.Body>
-                                    </Accordion.Collapse>
-                                )
-                            })}
-                        </Card>
-                    </Accordion> */}
+                    {specificApplicant.map((item) => {
+                        return (
+                            <Collapsible trigger={`${item.firstName} ${item.lastName}`}>
+                                <ul>
+                                    <li>{`Name: ${item.firstName} ${item.lastName}`}</li>
+                                    <li>{`Email Address: ${item.email}`}</li>
+                                    <li>{`Phone Number: ${item.phone}`}</li>
+                                </ul>
+                            </Collapsible>
+                        )
+                    })}
 
-                    <Carousel>
-                        <div>
-
-                        <img src={this.props.properties.image[0]} />
-                            <p className="legend">{this.props.properties.firstName}</p>
-                            
-                        </div>
-                        <div>
-                            <img src={this.props.properties.image[1]} />
-                            <p className="legend">Legend 2</p>
-                        </div>
-                        <div>
-                            <img src={this.props.properties.image[2]} />
-                            <p className="legend">Legend 3</p>
-                        </div>
-                    </Carousel>
                 </Rodal>
             </>
         );
